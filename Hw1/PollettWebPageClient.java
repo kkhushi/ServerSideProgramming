@@ -13,16 +13,16 @@ import java.io.InputStreamReader;
 
 public class PollettWebPageClient{
 
-	public static void main(String args[]) {
+    public static void main(String args[]) {
 
-	    String host="www.cs.sjsu.edu"; //Root website
+        String host="www.cs.sjsu.edu"; //Root website
         int port=80; //Webserver listening on port 80
         String path; //Relative path from the root. This is the exact page that is requested to be fetched
         String requeststring=null; //HTTP GET request to request the path
         BufferedWriter writer=null;
         BufferedReader reader=null;
 
-	    try {
+        try {
                 //Get the value of some_path
                 if(args.length == 0) {
                     System.out.println("The syntax is java PollettWebPageClient <some_path>");
@@ -68,25 +68,25 @@ public class PollettWebPageClient{
         }
     }
 
-/**
-* Uses the write handle to write the HTTP GET request onto the OutputStream. This is akin to connecting to the website
-* using telnet (eg. telnet www.cs.sjsu.edu 80) and then typing the HTTP GET request.
-* @param w              Handle to the OutputStream obtained from the socket which connects to the website.
-* @param requeststring  The exact HTTP GET request.
-*
-*/
+    /**
+    * Uses the write handle to write the HTTP GET request onto the OutputStream. This is akin to connecting to the website
+    * using telnet (eg. telnet www.cs.sjsu.edu 80) and then typing the HTTP GET request.
+    * @param w              Handle to the OutputStream obtained from the socket which connects to the website.
+    * @param requeststring  The exact HTTP GET request.
+    *
+    */
     public static void sendrequest(BufferedWriter writer,String requeststring) throws Exception {
         writer.write(requeststring);
         writer.flush();
     }
 
 
-/**
-* Uses the read handle to read the returned response from the webserver.
-* Each line of the response is parsed and displayed to the user.
-* @param    r   Handle to the InputStream obtained from the socket which connects to the website.
-*
-*/
+    /**
+    * Uses the read handle to read the returned response from the webserver.
+    * Each line of the response is parsed and displayed to the user.
+    * @param    r   Handle to the InputStream obtained from the socket which connects to the website.
+    *
+    */
     public static void displayresponse(BufferedReader reader) throws Exception {
         String line;
         while((line=reader.readLine()) !=null)
