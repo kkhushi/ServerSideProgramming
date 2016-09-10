@@ -1,0 +1,63 @@
+Response Headers
+---------------------- 
+
+174.23.1.6f/
+
+HTTP/1.1 200 OK
+Date: Fri, 09 Sep 2016 17:42:13 GMT
+Server: Apache/2.2.15 (Red Hat)
+Accept-Ranges: bytes
+X-FRAME-OPTIONS: SAMEORIGIN
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+---------------------------------------------------
+
+masters/
+
+HTTP/1.1 200 OK
+Date: Fri, 09 Sep 2016 17:46:02 GMT
+Server: Apache/2.2.15 (Red Hat)
+Accept-Ranges: bytes
+X-FRAME-OPTIONS: SAMEORIGIN
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+----------------------------------------------------
+
+index.shtml
+
+HTTP/1.1 200 OK
+Date: Fri, 09 Sep 2016 17:47:00 GMT
+Server: Apache/2.2.15 (Red Hat)
+Accept-Ranges: bytes
+X-FRAME-OPTIONS: SAMEORIGIN
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+-----------------------------------------------------
+
+../pollett/
+
+HTTP/1.1 200 OK
+Date: Fri, 09 Sep 2016 17:48:18 GMT
+Server: Apache/2.2.15 (Red Hat)
+Accept-Ranges: bytes
+X-FRAME-OPTIONS: SAMEORIGIN
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+----------------------------------------------------
+
+Accept-Ranges : This is to specify whether a server takes range request to serve partial content. The values for this field are : 
+    none: to tell the client that partial content requests are not served.
+    bytes: only this is supported by HTTP/1.1 and it means client can specify bytes ranges for partial content request
+
+X-FRAME-OPTIONS : This is to indicate whether a page can be rendered in a <frame>, <iframe> or <object>. It is used to avoid clickjacking attacks. The values for this Header fields are as follows: 
+    DENY : Does not allow rendering of the page in any site
+    SAMEORIGIN : The page can be renedered into Frames of pages from the same site
+    ALLOW_FROM uri : The page can be rendered in a frame on specified sites
+
+Transfer-Encoding : This indicates the server is using chunked encoding, that is sending content broken into chunks, each chunk is prefixed by its size in bytes. A zero size chunk is send to indicate the end of the response message. This allows server to start serving the response even if it doesnot have the knowledge of size of the response.
+
+The values in response headers by CS Department means that the server accepts byte-serving requests, allows page to be rendered in frames from the same site and sends response as chunks.
