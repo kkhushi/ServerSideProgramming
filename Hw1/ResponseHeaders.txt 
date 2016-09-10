@@ -1,46 +1,8 @@
-Response Headers
+Response Header
 ---------------------- 
-
-174.23.1.6f/
 
 HTTP/1.1 200 OK
 Date: Fri, 09 Sep 2016 17:42:13 GMT
-Server: Apache/2.2.15 (Red Hat)
-Accept-Ranges: bytes
-X-FRAME-OPTIONS: SAMEORIGIN
-Transfer-Encoding: chunked
-Content-Type: text/html; charset=UTF-8
-
----------------------------------------------------
-
-masters/
-
-HTTP/1.1 200 OK
-Date: Fri, 09 Sep 2016 17:46:02 GMT
-Server: Apache/2.2.15 (Red Hat)
-Accept-Ranges: bytes
-X-FRAME-OPTIONS: SAMEORIGIN
-Transfer-Encoding: chunked
-Content-Type: text/html; charset=UTF-8
-
-----------------------------------------------------
-
-index.shtml
-
-HTTP/1.1 200 OK
-Date: Fri, 09 Sep 2016 17:47:00 GMT
-Server: Apache/2.2.15 (Red Hat)
-Accept-Ranges: bytes
-X-FRAME-OPTIONS: SAMEORIGIN
-Transfer-Encoding: chunked
-Content-Type: text/html; charset=UTF-8
-
------------------------------------------------------
-
-../pollett/
-
-HTTP/1.1 200 OK
-Date: Fri, 09 Sep 2016 17:48:18 GMT
 Server: Apache/2.2.15 (Red Hat)
 Accept-Ranges: bytes
 X-FRAME-OPTIONS: SAMEORIGIN
