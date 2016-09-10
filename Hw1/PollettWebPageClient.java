@@ -13,8 +13,8 @@ import java.io.InputStreamReader;
 
 public class PollettWebPageClient{
 
-	public static void main(String args[])
-	{
+	public static void main(String args[]) {
+
 	    String host="www.cs.sjsu.edu"; //Root website
         int port=80; //Webserver listening on port 80
         String path; //Relative path from the root. This is the exact page that is requested to be fetched
@@ -22,14 +22,13 @@ public class PollettWebPageClient{
         BufferedWriter writer=null;
         BufferedReader reader=null;
 
-	    try{
+	    try {
                 //Get the value of some_path
-                if(args.length == 0)
-                {
+                if(args.length == 0) {
                     System.out.println("The syntax is java PollettWebPageClient <some_path>");
                     System.exit(0);
                 }
-                else{
+                else {
                     path=args[0].toString();
                     requeststring="GET /faculty/pollett/"+path+" HTTP/1.1\r\n"+"Host: "+host+"\r\n\r\n";
                 }
@@ -48,35 +47,25 @@ public class PollettWebPageClient{
 
                 displayresponse(reader); //Display response
 
-        }
-        catch(Exception e)
-            {
-                e.printStackTrace();
-            }
+        } catch(Exception e) {
+            e.printStackTrace();
 
-        finally
-            {
-                if(reader!=null)
-                {
-                    try{
+        } finally {
+            if(reader!=null) {
+                try {
                     reader.close();
-                    }
-                    catch(Exception ex)
-                    {
-                        ex.printStackTrace();
-                    }
-                }
-                if(writer!=null)
-                {
-                    try{
-                    writer.close();
-                    }
-                    catch(Exception ex)
-                    {
-                        ex.printStackTrace();
-                    }
+                } catch (Exception ex) {
+                    ex.printStackTrace();
                 }
             }
+            if(writer!=null) {
+                try {
+                    writer.close();
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+        }
     }
 
 /**
@@ -85,10 +74,8 @@ public class PollettWebPageClient{
 * @param w              Handle to the OutputStream obtained from the socket which connects to the website.
 * @param requeststring  The exact HTTP GET request.
 *
-*
 */
-    public static void sendrequest(BufferedWriter writer,String requeststring) throws Exception
-    {
+    public static void sendrequest(BufferedWriter writer,String requeststring) throws Exception {
         writer.write(requeststring);
         writer.flush();
     }
@@ -99,16 +86,10 @@ public class PollettWebPageClient{
 * Each line of the response is parsed and displayed to the user.
 * @param    r   Handle to the InputStream obtained from the socket which connects to the website.
 *
-*
 */
-    public static void displayresponse(BufferedReader reader) throws Exception
-    {
+    public static void displayresponse(BufferedReader reader) throws Exception {
         String line;
         while((line=reader.readLine()) !=null)
-            {
-                System.out.println(line);
-            }
-
-
+            System.out.println(line);
     }
 }
