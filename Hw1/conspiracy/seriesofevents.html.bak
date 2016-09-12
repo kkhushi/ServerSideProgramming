@@ -4,17 +4,19 @@
   <head>
     <meta charset="utf-8" />
     <title>Area 51 : The Extraterrestial Science Lab</title>
-    <meta name="author" content="SKV" />
-    <meta name="description" content="This site is about conspiracy theories surrounding AREA 51, a US military base in Nevada" />
-    <link rel="icon" href="images/favicon.ico" />
+    <meta content="SKV" name="author" />
+    <meta content="This site is about conspiracy theories surrounding AREA 51, a US military base in Nevada"
+
+      name="description" />
+    <link href="images/favicon.ico" rel="icon" />
     <style>
             td {padding: 15px;border:1px solid black;}
             table {border-collapse:collapse;border:1px solid black;}
         </style>
   </head>
-  <body style="    background-image:url(images/beigebg.png)"> <img src="images/alienImage.png"
+  <body style="    background-image:url(images/beigebg.png)"> <img style="width:64px;float:left;"
 
-      alt="Alien Image" style="width:64px;float:left;" />
+      alt="Alien Image" src="images/alienImage.png" />
     <h1>  Area 51 Timeline</h1>
     <h2>All evidence for the conspiracy is of course evidence for the
       conspiracy. But, all evidence against the conspiracy was planted by
@@ -24,9 +26,9 @@
       <tbody>
         <tr>
           <td>1957</td>
-          <td><img src="images/groomlake.png" alt="Image of groom lake" title="groomlake"
+          <td><img style="width: 286px; height: 196px;" title="groomlake" alt="Image of groom lake"
 
-              style="width: 286px; height: 196px;" /><br />
+              src="images/groomlake.png" /><br />
           </td>
           <td>
             <ul>
@@ -43,9 +45,9 @@
         </tr>
         <tr>
           <td>1961</td>
-          <td><img src="images/r4808.png" alt="Image of r4808 airspace location"
+          <td><img style="width: 286px; height: 196px;" alt="Image of r4808 airspace location"
 
-              style="width: 286px; height: 196px;" /><br />
+              src="images/r4808.png" /><br />
           </td>
           <td>
             <ul>
@@ -63,9 +65,9 @@
         </tr>
         <tr>
           <td>1962 - 1977</td>
-          <td><img src="images/ufo_sighting.png" alt="An image of 1960's UFO sighting"
+          <td><img style="width: 286px; height: 196px;" alt="An image of 1960's UFO sighting"
 
-              style="width: 286px; height: 196px;" /><br />
+              src="images/ufo_sighting.png" /><br />
           </td>
           <td>
             <ul>
@@ -79,9 +81,9 @@
         </tr>
         <tr>
           <td>1982 - 1984</td>
-          <td><img src="images/expanded_airspace.png" alt="Image of latest expanded airspace"
+          <td><img style="width: 286px; height: 196px;" alt="Image of latest expanded airspace"
 
-              style="width: 286px; height: 196px;" /><br />
+              src="images/expanded_airspace.png" /><br />
           </td>
           <td>
             <ul>
@@ -95,100 +97,101 @@
         </tr>
         <tr>
           <td>1988</td>
-          <td><img src="images/popscience.png" alt="Image of popular science cover photo of area51"
+          <td><img style="width: 286px; height: 196px;" alt="Image of popular science cover photo of area51"
 
-              style="width: 286px; height: 196px;" /><br />
+              src="images/popscience.png" /><br />
           </td>
           <td>
             <ul>
               <li>A Soviet satellite photographs Area 51.</li>
-              <li>“Popular Science” runs the
-            photograph, giving most U.S. citizens their first chance to glimpse
-                the secret base. </li>
-              <li>That same year, Robert Frost, a civilian employee
-                at Area 51, dies.</li>
-              <li>An autopsy shows that his body contained high
-            levels of dangerous chemicals like dioxin, trichloroethylene and
+              <li>“Popular Science” runs the photograph, giving most U.S.
+                citizens their first chance to glimpse the secret base. </li>
+              <li>That same year, Robert Frost, a civilian employee at Area 51,
+                dies.</li>
+              <li>An autopsy shows that his body contained high levels of
+                dangerous chemicals like dioxin, trichloroethylene and
                 dibenzofuran.</li>
-              <li>His widow, Helen, files a lawsuit against several
-            government officials, claiming her husband died as a result of
-                exposure to dangerous chemicals.</li>
+              <li>His widow, Helen, files a lawsuit against several government
+                officials, claiming her husband died as a result of exposure to
+                dangerous chemicals.</li>
             </ul>
           </td>
         </tr>
         <tr>
           <td>1989</td>
           <td>
-            <center><img src="images/robertlazar.png" alt="Image of Robert Lazar"
-
-                style="height: 196px;" /></center>
+            <img style="height: 196px;margin:0px auto;display:block" alt="Image of Robert Lazar" src="images/robertlazar.png" />
             <br />
           </td>
           <td>
             <ul>
-              <li>Robert Lazar appears on television and claims to have worked on
-                reverse engineering alien technology.</li>
-              <li>The site where he worked was not far from Groom
-                Lake.</li>
+              <li>Robert Lazar appears on television and claims to have worked
+                on reverse engineering alien technology.</li>
+              <li>The site where he worked was not far from Groom Lake.</li>
             </ul>
           </td>
         </tr>
         <tr>
           <td>1995</td>
-          <td><img src="images/freedomridge.png" alt="Image of location of freedom ridge and whitesides peak"
+          <td><img style="width: 286px; height: 196px;" alt="Image of location of freedom ridge and whitesides peak"
 
-              style="width: 286px; height: 196px;" /><br />
+              src="images/freedomridge.png" /><br />
           </td>
           <td>
             <ul>
-              <li>Area 51 acquires two locations popular with tourists and curious
-                locals, Freedom Ridge and White Sides Peak.</li>
-              <li>President Clinton signs
-            an executive order exempting Area 51 from legislation and
-                investigation in order to preserve national security.</li>
+              <li>Area 51 acquires two locations popular with tourists and
+                curious locals, Freedom Ridge and White Sides Peak.</li>
+              <li>President Clinton signs an executive order exempting Area 51
+                from legislation and investigation in order to preserve national
+                security.</li>
             </ul>
           </td>
         </tr>
         <tr>
           <td>1996</td>
-          <td><img src="images/route375.png" alt="Image of Route 375 now" style="width: 286px; height: 196px;" /><br />
+          <td><img style="width: 286px; height: 196px;" alt="Image of Route 375 now"
+
+              src="images/route375.png" /><br />
           </td>
           <td>
             <ul>
-              <li>Nevada names Route 375, formerly known as the “loneliest highway
-                in America,” the “Extraterrestrial Highway.”</li>
+              <li>Nevada names Route 375, formerly known as the “loneliest
+                highway in America,” the “Extraterrestrial Highway.”</li>
             </ul>
           </td>
         </tr>
         <tr>
           <td>1997</td>
-          <td><img src="images/declassified_map.png" alt="Image of declassified map of Nevada"
+          <td><img style="width: 286px; height: 196px;" alt="Image of declassified map of Nevada"
 
-              style="width: 286px; height: 196px;" /><br />
-          </td>
-          <td>Area 51 is declassified, though all operations at the facility are
-            still kept secret.</td>
-        </tr>
-        <tr>
-          <td>2007</td>
-          <td><img src="images/newhangar.png" alt="Image of new hangar in 2014"
-
-              style="width: 286px; height: 196px;" /><br />
+              src="images/declassified_map.png" /><br />
           </td>
           <td>
             <ul>
-              <li>It appears that crews are building a new hangar, much larger than
-                the existing hangar.</li>
-              <li>One Web site claims the hangar’s size to be 200
-                by 500 feet and 100 feet tall.</li>
+              <li>Area 51 is declassified, though all operations at the facility
+                are still kept secret.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>2007</td>
+          <td><img style="width: 286px; height: 196px;" alt="Image of new hangar in 2014"
+
+              src="images/newhangar.png" /><br />
+          </td>
+          <td>
+            <ul>
+              <li>It appears that crews are building a new hangar, much larger
+                than the existing hangar.</li>
+              <li>One Web site claims the hangar’s size to be 200 by 500 feet
+                and 100 feet tall.</li>
               <li> Space sufficient for bigger alien space crafts.</li>
             </ul>
           </td>
         </tr>
       </tbody>
     </table>
-    <a href="factvsfiction.html" style="float:right;font-size:16pt;">Fact v/s
-      Fiction</a> <a href="index.html" style="float:left;font-size:16pt;">Home</a>
-    
+    <a style="float:right;font-size:16pt;" href="factvsfiction.html">Fact v/s
+      Fiction</a> <a style="float:left;font-size:16pt;" href="index.html">Home</a>
   </body>
 </html>
