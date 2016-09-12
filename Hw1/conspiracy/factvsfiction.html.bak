@@ -10,7 +10,9 @@
       name="description" />
     <link href="images/favicon.ico" rel="icon" />
   </head>
-  <body> <img style="width:64px;float:left;" alt="Alien Image" src="images/alienImage.png" />
+  <body style=" background-image:url(images/beigebg.png)"> <img style="width:64px;float:left;"
+
+      alt="Displayed here is an image of a typical alien with big glassy eyes and heart shaped face" src="images/alienImage.png" />
     <h1>  Area 51 Facts and Cover up</h1>
     <h2>Many claims are made about this area, but government kept it classified
       until it was too late:</h2>
@@ -114,23 +116,26 @@
         <tr>
           <td> <span title="The F117-A Nighthawk Stealth Fighter"> <img style="width:256px;height:256px;"
 
-                alt="Image of F117-A Nighthawk Stealth Fighter" src="images/area-51-7.png" /> </span> </td>
-          <td> <span title="Cammo dudes: The patrolling security guys in desert cammoflage outfits">
-              <img style="width:256px;height:256px;" alt="" src="images/area-51-2.png" />
+                alt="Displayed here is an image of F117-A Nighthawk Stealth Fighter ready to take off" src="images/area-51-7.png" />
+            </span> </td>
+          <td> <span title="Cammo dudes: The patrolling security guys in desert camoflage outfits">
+              <img style="width:256px;height:256px;" alt="Displayed here is an image of patrolling security guys in desert camoflage outfits" src="images/area-51-2.png" />
             </span> </td>
           <td> <span title="Lockheed's U-2 Dragon Lady spy plane"> <img style="width:256px;height:256px;"
 
-                alt="Image of U-2 Dragon Lady spy plane" src="images/area-51-3.png" /> </span> </td>
+                alt="Displayed here is an image of U-2 Dragon Lady spy plane flying over the clouds" src="images/area-51-3.png" />
+            </span> </td>
         </tr>
         <tr>
           <td> <span title="The SR-71 Blackbird"> <img style="width:256px;height:256px;"
 
-                alt="Image of SR-71 Blackbird" src="images/area-51-4.png" /> </span> </td>
+                alt="Displayed here is an image of SR-71 Blackbird flying over mountain ranges" src="images/area-51-4.png" /> </span>
+          </td>
           <td> <span title="Tacit Blue, aka Shamu"> <img style="width:256px;height:256px;"
 
-                alt="Image of Shamu" src="images/area-51-5.png" /> </span> </td>
-          <td> <span title="The MiG-21 is one of several foreign aircraft allegedly tested at Area 51.">
-              <img style="width:256px;height:256px;" alt="Image of Mig-21" src="images/area-51-6.png" />
+                alt="Displayed here is an image of Shamu also known as tacit blue" src="images/area-51-5.png" /> </span> </td>
+          <td> <span title="The MiG-21 is one of several foreign aircrafts allegedly tested at Area 51.">
+              <img style="width:256px;height:256px;" alt="Displayed here is an image of Mig-21, one of the several foreign aircrafts tested at area 51" src="images/area-51-6.png" />
             </span> </td>
         </tr>
       </tbody>
