@@ -71,7 +71,7 @@ public class PollettWebPageClient{
     /**
     * Uses the write handle to write the HTTP GET request onto the OutputStream. This is akin to connecting to the website
     * using telnet (eg. telnet www.cs.sjsu.edu 80) and then typing the HTTP GET request.
-    * @param w              Handle to the OutputStream obtained from the socket which connects to the website.
+    * @param writer              Handle to the OutputStream obtained from the socket which connects to the website.
     * @param requeststring  The exact HTTP GET request.
     *
     */
@@ -84,7 +84,7 @@ public class PollettWebPageClient{
     /**
     * Uses the read handle to read the returned response from the webserver.
     * Each line of the response is parsed and displayed to the user.
-    * @param    r   Handle to the InputStream obtained from the socket which connects to the website.
+    * @param    reader   Handle to the InputStream obtained from the socket which connects to the website.
     *
     */
     public static void displayresponse(BufferedReader reader) throws Exception {
