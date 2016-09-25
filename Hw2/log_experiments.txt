@@ -1,0 +1,165 @@
+1 http://localhost/conspiracy/
+2 http://localhost/
+3 http://localhost/conspiracy/factvsfiction.html
+4 http://localhost/phpmyadmin/
+5 http://localhost/conspiracy/seriesofevents.html
+6 http://localhost/conspiracy_area51/
+
+1 ::1 - - [19/Sep/2016:20:45:50 -0700] "GET /conspiracy HTTP/1.1" 301 336 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
+1 ::1 - - [19/Sep/2016:20:45:50 -0700] "GET /conspiracy/ HTTP/1.1" 200 7191 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
+1 ::1 - - [19/Sep/2016:20:45:50 -0700] "GET /conspiracy/css/conspiracy.css HTTP/1.1" 200 1564 "http://localhost/conspiracy/" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
+1 ::1 - - [19/Sep/2016:20:45:50 -0700] "GET /conspiracy/images/alienImage.png HTTP/1.1" 200 161474 "http://localhost/conspiracy/" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
+1 ::1 - - [19/Sep/2016:20:45:50 -0700] "GET /conspiracy/images/area51onmap.png HTTP/1.1" 200 35026 "http://localhost/conspiracy/" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
+1 ::1 - - [19/Sep/2016:20:45:50 -0700] "GET /conspiracy/images/conspiracy_area51.png HTTP/1.1" 200 19991 "http://localhost/conspiracy/" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
+1 ::1 - - [19/Sep/2016:20:45:50 -0700] "GET /conspiracy/images/favicon.ico HTTP/1.1" 200 161474 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
+
+
+2 ::1 - - [19/Sep/2016:20:43:12 -0700] "GET / HTTP/1.1" 302 - "-" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
+2 ::1 - - [19/Sep/2016:20:43:12 -0700] "GET /dashboard/ HTTP/1.1" 200 6904 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
+2 ::1 - - [19/Sep/2016:20:43:12 -0700] "GET /dashboard/stylesheets/normalize.css HTTP/1.1" 200 6876 "http://localhost/dashboard/" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
+2 ::1 - - [19/Sep/2016:20:43:12 -0700] "GET /dashboard/javascripts/all.js HTTP/1.1" 200 189003 "http://localhost/dashboard/" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
+2 ::1 - - [19/Sep/2016:20:43:12 -0700] "GET /dashboard/stylesheets/all.css HTTP/1.1" 200 481308 "http://localhost/dashboard/" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
+2 ::1 - - [19/Sep/2016:20:43:12 -0700] "GET /dashboard/javascripts/modernizr.js HTTP/1.1" 200 51365 "http://localhost/dashboard/" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
+2 ::1 - - [19/Sep/2016:20:43:12 -0700] "GET /dashboard/images/bitnami-xampp.png HTTP/1.1" 200 22133 "http://localhost/dashboard/" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
+2 ::1 - - [19/Sep/2016:20:43:12 -0700] "GET /dashboard/images/xampp-logo.svg HTTP/1.1" 200 5427 "http://localhost/dashboard/" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
+2 ::1 - - [19/Sep/2016:20:43:12 -0700] "GET /dashboard/images/fastly-logo.png HTTP/1.1" 200 1770 "http://localhost/dashboard/" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
+2 ::1 - - [19/Sep/2016:20:43:13 -0700] "GET /dashboard/images/social-icons@2x.png HTTP/1.1" 200 5360 "http://localhost/dashboard/stylesheets/all.css" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
+2 ::1 - - [19/Sep/2016:20:43:13 -0700] "GET /dashboard/images/favicon.png HTTP/1.1" 200 2508 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
+2 ::1 - - [19/Sep/2016:20:43:13 -0700] "GET /dashboard/images/fastly-logo@2x.png HTTP/1.1" 200 2678 "http://localhost/dashboard/" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
+
+3 ::1 - - [19/Sep/2016:20:46:01 -0700] "GET /conspiracy/factvsfiction.html HTTP/1.1" 200 8680 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
+3 ::1 - - [19/Sep/2016:20:46:01 -0700] "GET /conspiracy/images/boydbushman.png HTTP/1.1" 200 282087 "http://localhost/conspiracy/factvsfiction.html" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
+3 ::1 - - [19/Sep/2016:20:46:01 -0700] "GET /conspiracy/images/area-51-7.png HTTP/1.1" 200 15984 "http://localhost/conspiracy/factvsfiction.html" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
+3 ::1 - - [19/Sep/2016:20:46:01 -0700] "GET /conspiracy/images/boyddebunked.png HTTP/1.1" 200 198147 "http://localhost/conspiracy/factvsfiction.html" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
+3 ::1 - - [19/Sep/2016:20:46:01 -0700] "GET /conspiracy/images/area-51-2.png HTTP/1.1" 200 17934 "http://localhost/conspiracy/factvsfiction.html" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
+3 ::1 - - [19/Sep/2016:20:46:01 -0700] "GET /conspiracy/images/area-51-3.png HTTP/1.1" 200 5779 "http://localhost/conspiracy/factvsfiction.html" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
+3 ::1 - - [19/Sep/2016:20:46:01 -0700] "GET /conspiracy/images/area-51-4.png HTTP/1.1" 200 10360 "http://localhost/conspiracy/factvsfiction.html" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
+3 ::1 - - [19/Sep/2016:20:46:01 -0700] "GET /conspiracy/images/area-51-5.png HTTP/1.1" 200 14982 "http://localhost/conspiracy/factvsfiction.html" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
+3 ::1 - - [19/Sep/2016:20:46:01 -0700] "GET /conspiracy/images/area-51-6.png HTTP/1.1" 200 19337 "http://localhost/conspiracy/factvsfiction.html" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
+
+1 192.168.1.5 - - [19/Sep/2016:21:03:35 -0700] "GET /conspiracy HTTP/1.1" 301 342 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/601.7.7 (KHTML, like Gecko) Version/9.1.2 Safari/601.7.7"
+1 192.168.1.5 - - [19/Sep/2016:21:03:35 -0700] "GET /conspiracy/ HTTP/1.1" 200 7191 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/601.7.7 (KHTML, like Gecko) Version/9.1.2 Safari/601.7.7"
+1 192.168.1.5 - - [19/Sep/2016:21:03:35 -0700] "GET /conspiracy/css/conspiracy.css HTTP/1.1" 200 1564 "http://192.168.1.19/conspiracy/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/601.7.7 (KHTML, like Gecko) Version/9.1.2 Safari/601.7.7"
+1 192.168.1.5 - - [19/Sep/2016:21:03:35 -0700] "GET /conspiracy/images/alienImage.png HTTP/1.1" 200 161474 "http://192.168.1.19/conspiracy/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/601.7.7 (KHTML, like Gecko) Version/9.1.2 Safari/601.7.7"
+1 192.168.1.5 - - [19/Sep/2016:21:03:35 -0700] "GET /conspiracy/images/area51onmap.png HTTP/1.1" 200 35026 "http://192.168.1.19/conspiracy/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/601.7.7 (KHTML, like Gecko) Version/9.1.2 Safari/601.7.7"
+1 192.168.1.5 - - [19/Sep/2016:21:03:35 -0700] "GET /conspiracy/images/conspiracy_area51.png HTTP/1.1" 200 19991 "http://192.168.1.19/conspiracy/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/601.7.7 (KHTML, like Gecko) Version/9.1.2 Safari/601.7.7"
+1 192.168.1.5 - - [19/Sep/2016:21:03:35 -0700] "GET /conspiracy/images/favicon.ico HTTP/1.1" 200 161474 "http://192.168.1.19/conspiracy/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/601.7.7 (KHTML, like Gecko) Version/9.1.2 Safari/601.7.7"
+
+4 ::1 - - [20/Sep/2016:00:01:35 -0700] "GET /phpmyadmin HTTP/1.1" 301 336 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+4 ::1 - - [20/Sep/2016:00:01:35 -0700] "GET /phpmyadmin/ HTTP/1.1" 200 12574 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+4 ::1 - - [20/Sep/2016:00:01:35 -0700] "GET /phpmyadmin/themes/pmahomme/jquery/jquery-ui-1.11.2.css HTTP/1.1" 200 35212 "http://localhost/phpmyadmin/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+4 ::1 - - [20/Sep/2016:00:01:35 -0700] "GET /phpmyadmin/js/codemirror/lib/codemirror.css?v=4.5.1 HTTP/1.1" 200 7771 "http://localhost/phpmyadmin/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+4 ::1 - - [20/Sep/2016:00:01:35 -0700] "GET /phpmyadmin/js/codemirror/addon/hint/show-hint.css?v=4.5.1 HTTP/1.1" 200 662 "http://localhost/phpmyadmin/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+4 ::1 - - [20/Sep/2016:00:01:35 -0700] "GET /phpmyadmin/js/codemirror/addon/lint/lint.css?v=4.5.1 HTTP/1.1" 200 3068 "http://localhost/phpmyadmin/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+4 ::1 - - [20/Sep/2016:00:01:35 -0700] "GET /phpmyadmin/themes/pmahomme/css/printview.css?v=4.5.1 HTTP/1.1" 200 3082 "http://localhost/phpmyadmin/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+4 ::1 - - [20/Sep/2016:00:01:35 -0700] "GET /phpmyadmin/phpmyadmin.css.php?nocache=5811323358ltr HTTP/1.1" 200 20074 "http://localhost/phpmyadmin/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+4 ::1 - - [20/Sep/2016:00:01:35 -0700] "GET /phpmyadmin/js/whitelist.php?lang=en&db=&token=3aa85102598efac9f379d235464c9c55&v=4.5.1 HTTP/1.1" 200 482 "http://localhost/phpmyadmin/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+4 ::1 - - [20/Sep/2016:00:01:35 -0700] "GET /phpmyadmin/js/get_scripts.js.php?scripts%5B%5D=jquery/jquery-1.11.1.min.js&scripts%5B%5D=sprintf.js&scripts%5B%5D=ajax.js&scripts%5B%5D=keyhandler.js&scripts%5B%5D=jquery/jquery-ui-1.11.2.min.js&scripts%5B%5D=jquery/jquery.cookie.js&scripts%5B%5D=jquery/jquery.mousewheel.js&scripts%5B%5D=jquery/jquery.event.drag-2.2.js&scripts%5B%5D=jquery/jquery-ui-timepicker-addon.js&scripts%5B%5D=jquery/jquery.ba-hashchange-1.3.js&scripts%5B%5D=jquery/jquery.debounce-1.0.5.js&scripts%5B%5D=menu-resizer.js&scripts%5B%5D=cross_framing_protection.js&scripts%5B%5D=rte.js&scripts%5B%5D=tracekit/tracekit.js&scripts%5B%5D=error_report.js&scripts%5B%5D=doclinks.js&scripts%5B%5D=functions.js&scripts%5B%5D=navigation.js&scripts%5B%5D=indexes.js&v=4.5.1 HTTP/1.1" 200 216095 "http://localhost/phpmyadmin/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+4 ::1 - - [20/Sep/2016:00:01:35 -0700] "GET /phpmyadmin/js/get_scripts.js.php?scripts%5B%5D=common.js&scripts%5B%5D=config.js&scripts%5B%5D=page_settings.js&scripts%5B%5D=codemirror/lib/codemirror.js&scripts%5B%5D=codemirror/mode/sql/sql.js&scripts%5B%5D=codemirror/addon/runmode/runmode.js&scripts%5B%5D=codemirror/addon/hint/show-hint.js&scripts%5B%5D=codemirror/addon/hint/sql-hint.js&scripts%5B%5D=codemirror/addon/lint/lint.js&scripts%5B%5D=codemirror/addon/lint/sql-lint.js&scripts%5B%5D=console.js&v=4.5.1 HTTP/1.1" 200 129429 "http://localhost/phpmyadmin/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+4 ::1 - - [20/Sep/2016:00:01:36 -0700] "GET /phpmyadmin/js/messages.php?lang=en&db=&token=3aa85102598efac9f379d235464c9c55&v=4.5.1 HTTP/1.1" 200 8363 "http://localhost/phpmyadmin/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+4 ::1 - - [20/Sep/2016:00:01:36 -0700] "GET /phpmyadmin/js/get_image.js.php?theme=pmahomme&v=4.5.1 HTTP/1.1" 200 1822 "http://localhost/phpmyadmin/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+4 ::1 - - [20/Sep/2016:00:01:36 -0700] "GET /phpmyadmin/themes/pmahomme/img/logo_left.png HTTP/1.1" 200 2327 "http://localhost/phpmyadmin/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+4 ::1 - - [20/Sep/2016:00:01:36 -0700] "GET /phpmyadmin/themes/dot.gif HTTP/1.1" 200 43 "http://localhost/phpmyadmin/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+4 ::1 - - [20/Sep/2016:00:01:36 -0700] "GET /phpmyadmin/themes/pmahomme/img/ajax_clock_small.gif HTTP/1.1" 200 1810 "http://localhost/phpmyadmin/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+4 ::1 - - [20/Sep/2016:00:01:36 -0700] "GET /phpmyadmin/themes/pmahomme/img/s_collapseall.png HTTP/1.1" 200 170 "http://localhost/phpmyadmin/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+4 ::1 - - [20/Sep/2016:00:01:36 -0700] "GET /phpmyadmin/themes/pmahomme/img/left_nav_bg.png HTTP/1.1" 200 297 "http://localhost/phpmyadmin/phpmyadmin.css.php?nocache=5811323358ltr" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+4 ::1 - - [20/Sep/2016:00:01:36 -0700] "GET /phpmyadmin/themes/pmahomme/img/sprites.png?v=4.5.1 HTTP/1.1" 200 46795 "http://localhost/phpmyadmin/phpmyadmin.css.php?nocache=5811323358ltr" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+4 ::1 - - [20/Sep/2016:00:01:37 -0700] "GET /phpmyadmin/favicon.ico HTTP/1.1" 200 22486 "http://localhost/phpmyadmin/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+4 ::1 - - [20/Sep/2016:00:01:37 -0700] "POST /phpmyadmin/db_structure.php?ajax_request=1&favorite_table=1&sync_favorite_tables=1&token=3aa85102598efac9f379d235464c9c55 HTTP/1.1" 200 143 "http://localhost/phpmyadmin/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+4 ::1 - - [20/Sep/2016:00:01:37 -0700] "GET /phpmyadmin/version_check.php?server=1&_nocache=1474354897063220180 HTTP/1.1" 200 39 "http://localhost/phpmyadmin/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+
+5 ::1 - - [20/Sep/2016:00:09:10 -0700] "GET /conspiracy/seriesofevents.html HTTP/1.1" 200 11055 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393"
+5 ::1 - - [20/Sep/2016:00:09:10 -0700] "GET /conspiracy/css/conspiracy.css HTTP/1.1" 200 1564 "http://localhost/conspiracy/seriesofevents.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393"
+5 ::1 - - [20/Sep/2016:00:09:10 -0700] "GET /conspiracy/images/alienImage.png HTTP/1.1" 200 161474 "http://localhost/conspiracy/seriesofevents.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393"
+5 ::1 - - [20/Sep/2016:00:09:10 -0700] "GET /conspiracy/images/groomlake.png HTTP/1.1" 200 46597 "http://localhost/conspiracy/seriesofevents.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393"
+5 ::1 - - [20/Sep/2016:00:09:10 -0700] "GET /conspiracy/images/ufo_sighting.png HTTP/1.1" 200 16801 "http://localhost/conspiracy/seriesofevents.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393"
+5 ::1 - - [20/Sep/2016:00:09:10 -0700] "GET /conspiracy/images/r4808.png HTTP/1.1" 200 55843 "http://localhost/conspiracy/seriesofevents.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393"
+5 ::1 - - [20/Sep/2016:00:09:10 -0700] "GET /conspiracy/images/popscience.png HTTP/1.1" 200 33621 "http://localhost/conspiracy/seriesofevents.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393"
+5 ::1 - - [20/Sep/2016:00:09:10 -0700] "GET /conspiracy/images/expanded_airspace.png HTTP/1.1" 200 127728 "http://localhost/conspiracy/seriesofevents.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393"
+5 ::1 - - [20/Sep/2016:00:09:10 -0700] "GET /conspiracy/images/robertlazar.png HTTP/1.1" 200 20745 "http://localhost/conspiracy/seriesofevents.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393"
+5 ::1 - - [20/Sep/2016:00:09:10 -0700] "GET /conspiracy/images/route375.png HTTP/1.1" 200 221160 "http://localhost/conspiracy/seriesofevents.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393"
+5 ::1 - - [20/Sep/2016:00:09:10 -0700] "GET /conspiracy/images/freedomridge.png HTTP/1.1" 200 116723 "http://localhost/conspiracy/seriesofevents.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393"
+5 ::1 - - [20/Sep/2016:00:09:10 -0700] "GET /conspiracy/images/declassified_map.png HTTP/1.1" 200 15292 "http://localhost/conspiracy/seriesofevents.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393"
+5 ::1 - - [20/Sep/2016:00:09:10 -0700] "GET /conspiracy/images/newhangar.png HTTP/1.1" 200 33621 "http://localhost/conspiracy/seriesofevents.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393"
+
+6 ::1 - - [20/Sep/2016:00:16:53 -0700] "GET /conspiracy_area51/ HTTP/1.1" 200 6606 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393"
+6 ::1 - - [20/Sep/2016:00:16:53 -0700] "GET /conspiracy_area51/images/area51onmap.png HTTP/1.1" 304 - "http://localhost/conspiracy_area51/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393"
+6 ::1 - - [20/Sep/2016:00:16:53 -0700] "GET /conspiracy_area51/images/conspiracy_area51.png HTTP/1.1" 304 - "http://localhost/conspiracy_area51/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393"
+6 ::1 - - [20/Sep/2016:00:16:53 -0700] "GET /conspiracy_area51/images/alienImage.png HTTP/1.1" 304 - "http://localhost/conspiracy_area51/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393"
+6 ::1 - - [20/Sep/2016:00:16:53 -0700] "GET /conspiracy_area51/images/beigebg.png HTTP/1.1" 304 - "http://localhost/conspiracy_area51/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393"
+
+
+
+
+-------------
+Explanation
+-------------
+
+Unique visitors:
+----------------
+This information can be found in the first column of each row corresponding to the page requested. In our case, The webpage localhost/conspiracy was visited by the localhost as well as a computer with IP 192.168.1.5. Hence, 2 unique visitors. We can automate this process
+by using awk, uniq and wc commands in a pipeline to count the unique visitors. we have to extract only the first column and make sure that we display only unique values and count the number of such values whcih gives the unique visitor count.
+
+>cat access.log | awk "{print $1}" | sort | uniq | wc -l
+
+Number of visits:
+-----------------
+According to standard log format "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-agent}i\"" which apache access log seems to follow, %>s is the status code which the server sends back to the client. If it is 200 then everything is OK.
+%{Referer} refers to the page from where the current URL is accessed. A value "-" means, the URL was not linked from anywhere but typed explicitly by the user. Hence using awk and obtaining the fields for these 2 values to be 200 and "-" would mean
+successful visit. The count of such 200 "-" values will be the number of visits.
+
+>cat access.log | awk "{print $9,$11}" | awk "/200/ && /\"-\"/" | wc -l
+
+Pages:
+-------
+The number of HTML, php etc. pages totally viewed ( excluding files like img files, css, js etc.). The %{referer} field in the apache log format corresponds to the page through which the current URL is accessed. Using awk or any other similar tool to extract the contents of that column and counting the unique occurrances in that column will yield 
+the total number of pages(excluding files which cannot be considered as pages) visited by all visitors. For example, in this line GET /conspiracy/images/newhangar.png HTTP/1.1" 200 33621 "http://localhost/conspiracy/seriesofevents.html", the newhangar.png was fetched/accessed from http://localhost/conspiracy/seriesofevents.html, the %{Referer} field.
+
+>cat access.log | awk "{print $11}" | sort | uniq  |wc -l
+
+Hits:
+-----
+Any files ( not just pages, but also files like img, js, css etc.) requested from the server. This imformation can be obtained by parsing the "%r" field in the access.log. This is the request line from the client requesting a file. 
+For example, in the access.log entries above, the field "GET /conspiracy_area51/images/beigebg.png" implies that beigebg.png file is requested by the client. If we extract this field from the log file and count the number of lines, it gives the total number of all files requested by all users.
+
+>cat access.log | awk "{print $7,$9}" | awk "{print $1, $2 ~ /^200$/}" | grep ^\/ | sort | uniq
+
+Bandwidth:
+----------
+The total number of bytes returned by the server in response to client's request. The field next to %>s is %b which means the number of bytes returned is specified next to the status code. Extracting only these 2 fields and adding up the values in the %b field gives the bandwidth.
+For example, in the line, GET /conspiracy/seriesofevents.html HTTP/1.1" 200 11055, the needed fields are "200 11055" which means 11055 bytes were returned successfully. Adding all such values in all the lines(with successful responses) gives the bandwidth.
+
+Monthly History:
+-----------------
+The 4th column in the access.log gives the date, month, year and time when the request was received. By accessing rows corresponding to a particular month and calculating the number of visits, pages, hits and bandwidth values (using methods mentioned above), the monthly history can be calculated.
+
+Days of month:
+---------------
+The 4th column also has the day details. For example, [20/Sep/2016:00:09:10 -0700]. By parsing the individual day data for each month and applying the above methods to calculate the number of visits, pages, hits and bandwidth values, the days of the month usage metrics can be calculated.
+
+Days of week:
+--------------
+
+Hours:
+-------
+The 4th column in access.log can be parsed using ":" delimiter and the hits for the hours can be calculated.
+
+Countries:
+------------
+The IP addresses can be accessed by extracting the first field from access.log and using the geoiplookup command to find out the country to which it belongs. By using sort and uniq -c command, we can find out the total number of hits for each country and the total number of pages can be found by using the referer column information(in order to 
+exclude files that are not pages).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
