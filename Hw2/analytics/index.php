@@ -78,7 +78,7 @@ function codes()
 		print("<input type=\"text\" name=\"arg2\" value=$valueoftext> </br>");
 		print("<input type=\"submit\" name=\"submitarg2\" />");	
 		print("<h2>Add the following code to the web page of the site with the url just entered</h2>");
-		$codesnippet="<script src=\"URL_TO_TRACKER_SITE/?activity=counts&arg=$YYYY&arg2=$XXXX\" />";
+		$codesnippet="<script src=\"".URL_TO_TRACKER_SITE."/?activity=counts&arg=$YYYY&arg2=$XXXX\"/>";
 		echo htmlentities($codesnippet);
 	
 		if(!file_exists("./url_lookups.txt"))
