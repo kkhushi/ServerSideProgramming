@@ -135,10 +135,36 @@ function analytics()
 {
 	print("<h1>View Analytics - Web Page Tagging Analytics</h1>");
 	print("<h2>Analytics for ". $_REQUEST['arg']."</h2>");
+	$lookups=[];
+	$counts=[];
 	if (file_exists("./url_lookups.txt") && file_exists("./counts.txt"))
 	{
 		$lookups=unserialize(file_get_contents("./url_lookups.txt"));
 		$counts=unserialize(file_get_contents("./counts.txt"));
+	}
+	
+	$magiclocator=$counts[$_REQUEST['arg']];
+	foreach($magiclocator as $urlindexing=>$ipcountinfo)
+	{
+		$corresponding_url=$lookups[$urlindexing];
+		$sum=0;
+		foreach($ipcountinfo as $countip=>$countinfo)
+		{
+			$sum+=$countinfo;
+		}
+		print("<h3>".$corresponding_url."  ".$sum."</h3>");
+		
+		print("<table>");
+		print("<tr><th>IP</th><th>Count</th></tr>");
+		foreach($ipcountinfo as $key=>$value)
+		{
+			print("<tr>");
+			print("<td>".$key."</td>");
+			print("<td>".$value."</td>");
+			print("</tr>");
+		}
+		print("</table>");
+		
 	}
 	
 }
