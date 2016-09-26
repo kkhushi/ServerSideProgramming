@@ -142,29 +142,38 @@ function analytics()
 		$lookups=unserialize(file_get_contents("./url_lookups.txt"));
 		$counts=unserialize(file_get_contents("./counts.txt"));
 	}
-
-	$magiclocator=$counts[sha1($_REQUEST['arg'])];
-	foreach($magiclocator as $urlindexing=>$ipcountinfo)
+	
+	$arrayindex=sha1($_REQUEST['arg']);
+	if(!array_key_exists($arrayindex,$counts))
 	{
-		$corresponding_url=$lookups[$urlindexing];
-		$sum=0;
-		foreach($ipcountinfo as $countip=>$countinfo)
+		print("<h3>No analytics information for ".$_REQUEST['arg']." found!</h3>");
+		return;
+	}
+	else
+	{
+		$magiclocator=$counts[$arrayindex];
+		foreach($magiclocator as $urlindexing=>$ipcountinfo)
 		{
-			$sum+=$countinfo;
-		}
-		print("<h3>".$corresponding_url."  ".$sum."</h3>");
+			$corresponding_url=$lookups[$urlindexing];
+			$sum=0;
+			foreach($ipcountinfo as $countip=>$countinfo)
+			{
+				$sum+=$countinfo;
+			}
+			print("<h3>".$corresponding_url."  ".$sum."</h3>");
 		
-		print("<table>");
-		print("<tr><th>IP</th><th>Count</th></tr>");
-		foreach($ipcountinfo as $key=>$value)
-		{
-			print("<tr>");
-			print("<td>".$key."</td>");
-			print("<td>".$value."</td>");
-			print("</tr>");
-		}
-		print("</table>");
+			print("<table>");
+			print("<tr><th>IP</th><th>Count</th></tr>");
+			foreach($ipcountinfo as $key=>$value)
+			{
+				print("<tr>");
+				print("<td>".$key."</td>");
+				print("<td>".$value."</td>");
+				print("</tr>");
+			}
+			print("</table>");
 		
+		}
 	}
 	
 }
