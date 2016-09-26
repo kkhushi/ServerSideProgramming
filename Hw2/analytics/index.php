@@ -142,8 +142,8 @@ function analytics()
 		$lookups=unserialize(file_get_contents("./url_lookups.txt"));
 		$counts=unserialize(file_get_contents("./counts.txt"));
 	}
-	
-	$magiclocator=$counts[$_REQUEST['arg']];
+
+	$magiclocator=$counts[sha1($_REQUEST['arg'])];
 	foreach($magiclocator as $urlindexing=>$ipcountinfo)
 	{
 		$corresponding_url=$lookups[$urlindexing];
