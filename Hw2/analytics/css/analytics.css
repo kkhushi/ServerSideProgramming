@@ -1,10 +1,111 @@
-h1,h2
+body
 {
-	text-align:center;
-	margin:auto;
+	background:url('../mountain.png') no-repeat 0px 0px;
+	background-size: cover;
+	font-family: 'Open Sans', sans-serif;
+	background-attachment: fixed;
+	background-position: center;
+	color:#fff;
+
 }
 
-table,td,th 
+div.forminput_info
 {
-	border: 1px solid black;
+	width:50%;
+	float:center;
+	margin:60px auto;
+	background:rgba(0, 0, 0, 0.28);
+	padding:4%;
+	box-shadow: 0 3px 18px 8px rgba(38, 24, 24, 0.25);
+	text-align:center;
+	position:relative;
+
 }
+
+input[type="text"]
+{
+	padding: 13px;
+	width: 93%;
+	background:#fff;
+	border: none;
+	outline: none;
+	margin-bottom:15px;
+	font-size:15pt;
+	font-family: 'Open Sans', sans-serif;
+}
+
+select option
+{
+	font-size:13pt;
+		
+}
+
+select
+{
+	margin-bottom:15px;
+	width:60%;
+	height:35px;
+}
+
+input[type="submit"]
+{
+	background: rgba(0, 188, 212, 0.54);
+	color:#fff;
+	padding:10px 20px;
+	border:none;
+	outline:none;
+	margin-top:20px;
+	cursor:pointer;
+	width:30%;
+	font-size:16px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+input[type="submit"]:hover
+{
+	background:rgb(0, 188, 212);
+}
+
+
+h1,h2,span
+{
+	font-family: 'Roboto', sans-serif;
+	color:#fff;
+	margin:auto;
+	text-align:center;
+}
+
+h3.noanalytics_message
+{
+	position:relative;
+	margin:10% auto 90%;
+	color:#fff;
+	text-align:center;
+	width:40%;
+}
+
+span
+{
+	
+}
+
+table 
+{
+	width: 50%;
+	float:center;
+}
+
+th,td
+{
+	text-align: left;
+	padding: 8px;
+	color:#fff;
+	background: rgb(0, 188, 212);
+}
+
+th 
+{
+	background:#4CAF50;
+	color:#fff;
+}
+

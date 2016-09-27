@@ -10,7 +10,7 @@
 
 define("URL_TO_TRACKER_SITE" , "http://localhost/analytics/index.php"); 
 
-if(!isset($_REQUEST["activity"]) || !isset($_REQUEST['arg']) || empty($_REQUEST['arg']))
+if(!isset($_REQUEST["activity"]) || !isset($_REQUEST["arg"]) || empty($_REQUEST["arg"]))
 {	
 	landing();	
 }
@@ -31,20 +31,24 @@ else if($_REQUEST["activity"]=="analytics")
 }
 
 
+
 function landing()
 {	
-	print("<h1>Web Page Tagging Analytics</h1>");
-	print("
-	<form name =\"formanalysis\" method=\"GET\">
-		<input type=\"text\" name=\"arg\" placeholder=\"Enter Site Magic String\" /> </br>
+?>
+	<h1>Web Page Tagging Analytics</h1>
+	<div class="forminput_info">
+	<form name ="formanalysis" method="GET">
+		<input type="text" name="arg" placeholder="Enter Site Magic String" /> </br>
 
-		<select name=\"activity\" id=\"analysisid\">
-			<option value=\"analytics\">View Analytics</option>
-			<option value=\"codes\">Get Site Tracker Codes</option>
+		<select name="activity" id="analysisid">
+			<option value="analytics">View Analytics</option>
+			<option value="codes">Get Site Tracker Codes</option>
 		</select> </br>
 
-		<input name=\"submitbutton\" type=\"submit\" value=\"Go\" />
-	</form>");
+		<input name="submitbutton" type="submit" value="Go" />
+	</form>
+	</div>
+<?php
 }
 
 function codes()
@@ -60,15 +64,18 @@ function codes()
 	$placeholdertext="Enter a URL to track";
 	$XXXX="";
 	$YYYY="";
-	print("<h1>Tracker Codes - Web Page Tagging Analytics</h1>");	
-	print("<form name=\"formtrack\" method=\"GET\">");
-	print("<input type=\"hidden\" name=\"arg\" value=\"".$_REQUEST['arg']."\"/>");
-	print("<input type=\"hidden\" name=\"activity\" value=\"codes\"/>");
-	if(!isset($_REQUEST['arg2']) || empty($_REQUEST['arg2']))
+?>
+	<h1>Tracker Codes - Web Page Tagging Analytics</h1>
+	<div class="forminput_info">	
+	<form name="formtrack" method="GET">
+		<input type="hidden" name="activity" value="codes"/>
+<?php
+	print("<input type=\"hidden\" name=\"arg\" value=\"".$_REQUEST["arg"]."\"/>");
+	if(!isset($_REQUEST["arg2"]) || empty($_REQUEST["arg2"]))
 	{
 		print("<input type=\"text\" name=\"arg2\" placeholder=\"$placeholdertext\"> </br>");
-		print("<input type=\"submit\" name=\"submitarg2\" />");
-			
+		print("<input type=\"submit\" name=\"submitarg2\" value=\"Go\" />");
+		print("</form></div>");		
 	}	
 	else
 	{
@@ -76,22 +83,23 @@ function codes()
 		$XXXX=sha1($_REQUEST['arg'].$_REQUEST['arg2']);
 		$YYYY=sha1($_REQUEST['arg']);
 		print("<input type=\"text\" name=\"arg2\" value=$valueoftext> </br>");
-		print("<input type=\"submit\" name=\"submitarg2\" />");	
+		print("<input type=\"submit\" name=\"submitarg2\" value=\"Go\" />");
+		print("</form></div>");	
 		print("<h2>Add the following code to the web page of the site with the url just entered</h2>");
 		$codesnippet="<script src=\"".URL_TO_TRACKER_SITE."/?activity=counts&arg=$YYYY&arg2=$XXXX\"/>";
-		echo htmlentities($codesnippet);
+		print("<span>".htmlentities($codesnippet)."</span>");
 	
 		if(!file_exists("./url_lookups.txt"))
 		{
 			$lookups=[];
-			$lookups[$XXXX] = $_REQUEST['arg2'];
+			$lookups[$XXXX] = $_REQUEST["arg2"];
 				
 		}
 		else
 		{
 			$contents=file_get_contents("./url_lookups.txt");
 			$lookups=unserialize($contents);
-			$lookups[$XXXX]=$_REQUEST['arg2'];
+			$lookups[$XXXX]=$_REQUEST["arg2"];
 		}
 
 		$lookupstofile=serialize($lookups);
@@ -103,7 +111,7 @@ function codes()
 function counts()
 {
 
-	if(!empty($_REQUEST['arg']) && !empty($_REQUEST['arg2']))
+	if(!empty($_REQUEST["arg"]) && !empty($_REQUEST["arg2"]))
 	{
 		$IP=$_SERVER["REMOTE_ADDR"];
 
@@ -134,7 +142,7 @@ function counts()
 function analytics()
 {
 	print("<h1>View Analytics - Web Page Tagging Analytics</h1>");
-	print("<h2>Analytics for ". $_REQUEST['arg']."</h2>");
+	print("<h2>Analytics for ". $_REQUEST["arg"]."</h2>");
 	$lookups=[];
 	$counts=[];
 	if (file_exists("./url_lookups.txt") && file_exists("./counts.txt"))
@@ -143,10 +151,10 @@ function analytics()
 		$counts=unserialize(file_get_contents("./counts.txt"));
 	}
 	
-	$arrayindex=sha1($_REQUEST['arg']);
+	$arrayindex=sha1($_REQUEST["arg"]);
 	if(!array_key_exists($arrayindex,$counts))
 	{
-		print("<h3>No analytics information for ".$_REQUEST['arg']." found!</h3>");
+		print("<h3 class=\"noanalytics_message\">No analytics information for ".$_REQUEST["arg"]." found!</h3>");
 		return;
 	}
 	else
