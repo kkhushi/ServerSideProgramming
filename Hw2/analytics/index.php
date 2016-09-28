@@ -64,48 +64,53 @@ function codes()
 	$placeholdertext="Enter a URL to track";
 	$XXXX="";
 	$YYYY="";
+	$valueoftext="";
+	$lookups=[];
+	$empty_form=true;
+
+	if(isset($_REQUEST["arg2"]) && !empty($_REQUEST["arg2"]))
+	{
+		$empty_form=false;
+		$valueoftext=$_REQUEST["arg2"];
+		$XXXX=sha1($_REQUEST["arg"].$_REQUEST["arg2"]);
+		$YYYY=sha1($_REQUEST["arg"]);
+
+		if(file_exists("./url_lookups.txt"))
+		{
+			$contents=file_get_contents("./url_lookups.txt");
+			$lookups=unserialize($contents);
+		}
+		
+		$lookups[$XXXX]=$_REQUEST["arg2"];
+		
+
+		$lookupstofile=serialize($lookups);
+		file_put_contents("./url_lookups.txt",$lookupstofile);	
+	}
 ?>
 	<h1>Tracker Codes - Web Page Tagging Analytics</h1>
 	<div class="forminput_info">	
 	<form name="formtrack" method="GET">
 		<input type="hidden" name="activity" value="codes"/>
 <?php
+	
 	print("<input type=\"hidden\" name=\"arg\" value=\"".$_REQUEST["arg"]."\"/>");
-	if(!isset($_REQUEST["arg2"]) || empty($_REQUEST["arg2"]))
-	{
-		print("<input type=\"text\" name=\"arg2\" placeholder=\"$placeholdertext\"> </br>");
-		print("<input type=\"submit\" name=\"submitarg2\" value=\"Go\" />");
-		print("</form></div>");		
-	}	
-	else
-	{
-		$valueoftext=$_REQUEST['arg2'];
-		$XXXX=sha1($_REQUEST['arg'].$_REQUEST['arg2']);
-		$YYYY=sha1($_REQUEST['arg']);
-		print("<input type=\"text\" name=\"arg2\" value=$valueoftext> </br>");
-		print("<input type=\"submit\" name=\"submitarg2\" value=\"Go\" />");
-		print("</form></div>");	
+	print("<input type=\"text\" name=\"arg2\" placeholder=\"$placeholdertext\" value=\"$valueoftext\"> </br>");
+?>
+		<input type="submit" name="submitarg2" value="Go" />
+	</form>
+	</div>
+	
+<?php
+	if(!$empty_form)
+	{	
 		print("<h2>Add the following code to the web page of the site with the url just entered</h2>");
 		$codesnippet="<script src=\"".URL_TO_TRACKER_SITE."/?activity=counts&arg=$YYYY&arg2=$XXXX\"/>";
 		print("<span>".htmlentities($codesnippet)."</span>");
-	
-		if(!file_exists("./url_lookups.txt"))
-		{
-			$lookups=[];
-			$lookups[$XXXX] = $_REQUEST["arg2"];
-				
-		}
-		else
-		{
-			$contents=file_get_contents("./url_lookups.txt");
-			$lookups=unserialize($contents);
-			$lookups[$XXXX]=$_REQUEST["arg2"];
-		}
+	}
+?>	
 
-		$lookupstofile=serialize($lookups);
-		file_put_contents("./url_lookups.txt",$lookupstofile);	
-	}	
-	
+<?php	
 }
 
 function counts()
@@ -113,14 +118,10 @@ function counts()
 
 	if(!empty($_REQUEST["arg"]) && !empty($_REQUEST["arg2"]))
 	{
-		$IP=$_SERVER["REMOTE_ADDR"];
-
-		if(!file_exists("./counts.txt"))
-		{	
-			$counts=[];
-			
-		}
-		else
+		$IP=$_SERVER["REMOTE_ADDR"];	
+		$counts=[];
+	
+		if(file_exists("./counts.txt"))
 		{
 			$contentsraw=file_get_contents("./counts.txt");
 			$counts=unserialize($contentsraw);
