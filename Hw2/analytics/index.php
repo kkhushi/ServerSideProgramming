@@ -29,6 +29,11 @@ else if($_REQUEST["activity"]=="analytics")
 {
 	analytics();
 }
+else
+{
+	landing();
+}
+
 
 
 
@@ -41,7 +46,7 @@ function landing()
 		<input type="text" name="arg" placeholder="Enter Site Magic String" /> </br>
 
 		<select name="activity" id="analysisid">
-			<option value="analytics">View Analytics</option>
+			<option value="analytics" selected="selected">View Analytics</option>
 			<option value="codes">Get Site Tracker Codes</option>
 		</select> </br>
 
@@ -160,10 +165,10 @@ function analytics()
 	}
 	else
 	{
-		$magiclocator=$counts[$arrayindex];
-		foreach($magiclocator as $urlindexing=>$ipcountinfo)
+		$XXXX=$counts[$arrayindex];
+		foreach($XXXX as $YYYY=>$ipcountinfo)
 		{
-			$corresponding_url=$lookups[$urlindexing];
+			$corresponding_url=$lookups[$YYYY];
 			$sum=0;
 			foreach($ipcountinfo as $countip=>$countinfo)
 			{

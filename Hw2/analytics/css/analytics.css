@@ -25,7 +25,7 @@ div.forminput_info
 input[type="text"]
 {
 	padding: 13px;
-	width: 93%;
+	width: 75%;
 	background:#fff;
 	border: none;
 	outline: none;
@@ -34,17 +34,12 @@ input[type="text"]
 	font-family: 'Open Sans', sans-serif;
 }
 
-select option
-{
-	font-size:13pt;
-		
-}
-
 select
 {
 	margin-bottom:15px;
-	width:60%;
-	height:35px;
+	width:79%;
+	height:45px;
+	font-size:19px;
 }
 
 input[type="submit"]
