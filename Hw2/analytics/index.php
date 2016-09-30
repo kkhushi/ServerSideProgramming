@@ -8,33 +8,30 @@
 
 <?php 
 
-define("URL_TO_TRACKER_SITE" , "http://localhost/analytics/index.php"); 
+//Set this value to document_root/analytics/index.php
+define("URL_TO_TRACKER_SITE" , "http://localhost/Hw2/analytics/index.php"); 
 
 if(!isset($_REQUEST["activity"]) || !isset($_REQUEST["arg"]) || empty($_REQUEST["arg"]))
 {	
-	landing();	
-}
-
-else if($_REQUEST["activity"]=="codes")
-{
-	codes();
-}
-
-else if($_REQUEST["activity"]=="counts")
-{
-	counts();
-}
-
-else if($_REQUEST["activity"]=="analytics")
-{
-	analytics();
-}
-else
-{
 	landing();
 }
 
-
+else 
+{
+	switch($_REQUEST["activity"]) {
+		case "codes":
+			codes();
+			break;
+		case "counts":
+			counts();
+			break;
+		case "analytics":
+			analytics();
+			break;
+		default:
+			landing();
+	}
+}
 
 
 function landing()
@@ -85,7 +82,7 @@ function codes()
 		
 
 			$lookupstofile=serialize($lookups);
-			file_put_contents("url_lookups.txt",$lookupstofile);	
+			file_put_contents("url_lookups.txt",$lookupstofile);
 		}
 	}
 
@@ -113,9 +110,6 @@ function codes()
 		print("<h2>Add the following code to the web page of the site with the url just entered</h2>");
 		print("<span>".htmlentities($codesnippet)."</span>");
 	}
-?>	
-
-<?php	
 }
 
 function counts()
@@ -146,6 +140,7 @@ function counts()
 		$tracking_result="<script type=\"text/javascript\">var tracking=\"done\";</script>";
 		htmlentities($tracking_result);
 	}
+	else return;
 }
 
 function analytics()
