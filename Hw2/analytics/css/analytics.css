@@ -86,8 +86,10 @@ span
 
 table 
 {
-	width: 100%;
+	width: 50%;
 	float:center;
+	position:relative;
+	margin:auto;
 }
 
 th,td
