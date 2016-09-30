@@ -75,9 +75,9 @@ function codes()
 			$XXXX=sha1($_REQUEST["arg"].$_REQUEST["arg2"]);
 			$YYYY=sha1($_REQUEST["arg"]);
 
-			if(file_exists("./url_lookups.txt"))
+			if(file_exists("url_lookups.txt"))
 			{
-				$contents=file_get_contents("./url_lookups.txt");
+				$contents=file_get_contents("url_lookups.txt");
 				$lookups=unserialize($contents);
 			}
 		
@@ -85,7 +85,7 @@ function codes()
 		
 
 			$lookupstofile=serialize($lookups);
-			file_put_contents("./url_lookups.txt",$lookupstofile);	
+			file_put_contents("url_lookups.txt",$lookupstofile);	
 		}
 	}
 
@@ -126,9 +126,9 @@ function counts()
 		$IP=$_SERVER["REMOTE_ADDR"];	
 		$counts=[];
 	
-		if(file_exists("./counts.txt"))
+		if(file_exists("counts.txt"))
 		{
-			$contentsraw=file_get_contents("./counts.txt");
+			$contentsraw=file_get_contents("counts.txt");
 			$counts=unserialize($contentsraw);
 		}
 		
@@ -141,7 +141,7 @@ function counts()
 			$counts[$_REQUEST["arg"]][$_REQUEST["arg2"]][$IP]++;
 		}
 		
-		file_put_contents("./counts.txt",serialize($counts));
+		file_put_contents("counts.txt",serialize($counts));
 		
 		$tracking_result="<script type=\"text/javascript\">var tracking=\"done\";</script>";
 		htmlentities($tracking_result);
@@ -155,10 +155,10 @@ function analytics()
 	print("<h2>Analytics for ". $_REQUEST["arg"]."</h2>");
 	$lookups=[];
 	$counts=[];
-	if (file_exists("./url_lookups.txt") && file_exists("./counts.txt"))
+	if (file_exists("url_lookups.txt") && file_exists("counts.txt"))
 	{
-		$lookups=unserialize(file_get_contents("./url_lookups.txt"));
-		$counts=unserialize(file_get_contents("./counts.txt"));
+		$lookups=unserialize(file_get_contents("url_lookups.txt"));
+		$counts=unserialize(file_get_contents("counts.txt"));
 	}
 	
 	$arrayindex=sha1($_REQUEST["arg"]);
@@ -181,7 +181,7 @@ function analytics()
 			print("<h3>".$corresponding_url."  ".$sum."</h3>");
 		
 			print("<table>");
-			print("<tr><th>IP</th><th>Count</th></tr>");
+			print("<tr><th>IP</th><th>Number of visits</th></tr>");
 			foreach($ipcountinfo as $key=>$value)
 			{
 				print("<tr>");
