@@ -106,7 +106,7 @@ function codes()
 <?php
 	if(!$empty_form && empty($errortext))
 	{	
-		$codesnippet="<script src=\"".URL_TO_TRACKER_SITE."/?activity=counts&arg=$YYYY&arg2=$XXXX\"/>";
+		$codesnippet="<script src=\"".URL_TO_TRACKER_SITE."/?activity=counts&arg=$YYYY&arg2=$XXXX\"></script>";
 		print("<h2>Add the following code to the web page of the site with the url just entered</h2>");
 		print("<span>".htmlentities($codesnippet)."</span>");
 	}
