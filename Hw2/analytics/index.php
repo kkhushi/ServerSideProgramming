@@ -173,7 +173,7 @@ function analytics()
 			{
 				$sum+=$countinfo;
 			}
-			print("<h3>".$corresponding_url."  ".$sum."</h3>");
+			print("<div class=\"forminput_info\"><h3>".$corresponding_url."  ".$sum."</h3>");
 		
 			print("<table>");
 			print("<tr><th>IP</th><th>Number of visits</th></tr>");
@@ -184,7 +184,7 @@ function analytics()
 				print("<td>".$value."</td>");
 				print("</tr>");
 			}
-			print("</table>");
+			print("</table></div>");
 		
 		}
 	}
