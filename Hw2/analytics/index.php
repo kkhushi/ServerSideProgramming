@@ -9,7 +9,7 @@
 <?php 
 
 //Set this value to document_root/analytics/index.php
-define("URL_TO_TRACKER_SITE" , "http://localhost/Hw2/analytics/index.php"); 
+define("URL_TO_TRACKER_SITE" , "http://localhost/analytics/index.php"); 
 
 if(!isset($_REQUEST["activity"]) || !isset($_REQUEST["arg"]) || empty($_REQUEST["arg"]))
 {	
@@ -40,12 +40,12 @@ function landing()
 	<h1>Web Page Tagging Analytics</h1>
 	<div class="forminput_info">
 	<form name ="formanalysis" method="GET">
-		<input type="text" name="arg" placeholder="Enter Site Magic String" /> </br>
+		<input type="text" name="arg" placeholder="Enter Site Magic String" /> <br />
 
 		<select name="activity" id="analysisid">
 			<option value="analytics" selected="selected">View Analytics</option>
 			<option value="codes">Get Site Tracker Codes</option>
-		</select> </br>
+		</select> <br />
 
 		<input name="submitbutton" type="submit" value="Go" />
 	</form>
