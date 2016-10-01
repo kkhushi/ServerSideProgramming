@@ -4,6 +4,10 @@
 4 http://localhost/phpmyadmin/
 5 http://localhost/conspiracy/seriesofevents.html
 6 http://localhost/conspiracy_area51/
+7 http://localhost/analytics/index.php
+8 http://localhost/analytics/index.php/?activity=counts&arg=32e2553ce1e911f6c8f975657dccdab20d6015e2&arg2=8c971660a917702cd2b0fd82cfff2ad985236249
+9 http://localhost/experiments/index.html
+10 http://localhost/test.html
 
 1 ::1 - - [19/Sep/2016:20:45:50 -0700] "GET /conspiracy HTTP/1.1" 301 336 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
 1 ::1 - - [19/Sep/2016:20:45:50 -0700] "GET /conspiracy/ HTTP/1.1" 200 7191 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
@@ -88,7 +92,23 @@
 6 ::1 - - [20/Sep/2016:00:16:53 -0700] "GET /conspiracy_area51/images/alienImage.png HTTP/1.1" 304 - "http://localhost/conspiracy_area51/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393"
 6 ::1 - - [20/Sep/2016:00:16:53 -0700] "GET /conspiracy_area51/images/beigebg.png HTTP/1.1" 304 - "http://localhost/conspiracy_area51/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393"
 
+7 ::1 - - [30/Sep/2016:23:07:44 -0700] "GET /analytics/index.php HTTP/1.1" 200 636 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36"
+7 ::1 - - [30/Sep/2016:23:07:44 -0700] "GET /analytics/css/analytics.css HTTP/1.1" 200 1499 "http://localhost/analytics/index.php" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36"
+7 ::1 - - [30/Sep/2016:23:07:44 -0700] "GET /analytics/mountain.png HTTP/1.1" 304 - "http://localhost/analytics/css/analytics.css" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36"
 
+8 ::1 - - [30/Sep/2016:23:12:05 -0700] "GET /analytics/index.php/?activity=counts&arg=32e2553ce1e911f6c8f975657dccdab20d6015e2&arg2=8c971660a917702cd2b0fd82cfff2ad985236249 HTTP/1.1" 200 166 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36"
+8 ::1 - - [30/Sep/2016:23:12:05 -0700] "GET /analytics/index.php/css/analytics.css HTTP/1.1" 200 636 "http://localhost/analytics/index.php/?activity=counts&arg=32e2553ce1e911f6c8f975657dccdab20d6015e2&arg2=8c971660a917702cd2b0fd82cfff2ad985236249" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36"
+
+9 ::1 - - [30/Sep/2016:23:21:00 -0700] "GET /experiments/index.html HTTP/1.1" 200 4056 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36"
+9 ::1 - - [30/Sep/2016:23:21:00 -0700] "GET /experiments/css/style.css HTTP/1.1" 200 8677 "http://localhost/experiments/index.html" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36"
+9 ::1 - - [30/Sep/2016:23:21:00 -0700] "GET /experiments/css/font-awesome.min.css HTTP/1.1" 200 27466 "http://localhost/experiments/index.html" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36"
+9 ::1 - - [30/Sep/2016:23:21:00 -0700] "GET /experiments/js/jquery.min.js HTTP/1.1" 200 96381 "http://localhost/experiments/index.html" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36"
+9 ::1 - - [30/Sep/2016:23:21:00 -0700] "GET /experiments/images/into.png HTTP/1.1" 200 2889 "http://localhost/experiments/css/style.css" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36"
+9 ::1 - - [30/Sep/2016:23:21:00 -0700] "GET /experiments/images/3.jpg HTTP/1.1" 200 364972 "http://localhost/experiments/css/style.css" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36"
+9 ::1 - - [30/Sep/2016:23:21:00 -0700] "GET /experiments/fonts/fontawesome-webfont.woff2?v=4.5.0 HTTP/1.1" 404 1248 "http://localhost/experiments/css/font-awesome.min.css" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36"
+9 ::1 - - [30/Sep/2016:23:21:00 -0700] "GET /experiments/fonts/fontawesome-webfont.woff?v=4.5.0 HTTP/1.1" 200 44432 "http://localhost/experiments/css/font-awesome.min.css" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36"
+
+10 ::1 - - [30/Sep/2016:23:28:59 -0700] "GET /test.html HTTP/1.1" 200 301 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36"
 
 
 -------------
