@@ -139,15 +139,20 @@ the total number of pages(excluding files which cannot be considered as pages) v
 
 Hits:
 -----
-Any files ( not just pages, but also files like img, js, css etc.) requested from the server. This imformation can be obtained by parsing the "%r" field in the access.log. This is the request line from the client requesting a file. 
+Any files ( not just pages, but also files like img, js, css etc.) requested from the server. This information can be obtained by parsing the "%r" field in the access.log. This is the request line from the client requesting a file. 
 For example, in the access.log entries above, the field "GET /conspiracy_area51/images/beigebg.png" implies that beigebg.png file is requested by the client. If we extract this field from the log file and count the number of lines, it gives the total number of all files requested by all users.
 
->cat access.log | awk "{print $7,$9}" | awk "{print $1, $2 ~ /^200$/}" | grep ^\/ | sort | uniq
+>cat access.log | awk "{print $7,$9}" | awk "{print $1, $2 ~ /^200$/}" | grep ^\/ | sort | wc -l
 
 Bandwidth:
 ----------
-The total number of bytes returned by the server in response to client's request. The field next to %>s is %b which means the number of bytes returned is specified next to the status code. Extracting only these 2 fields and adding up the values in the %b field gives the bandwidth.
+The total number of bytes returned by the server in response to client's request. In the standard log format standard log format "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-agent}i\"", the field next to %>s is %b which means the number of bytes returned is specified next to the status code. Extracting only these 2 fields and adding up the values in the %b field gives the bandwidth.
 For example, in the line, GET /conspiracy/seriesofevents.html HTTP/1.1" 200 11055, the needed fields are "200 11055" which means 11055 bytes were returned successfully. Adding all such values in all the lines(with successful responses) gives the bandwidth.
+
+Not viewed traffic:
+-------------------
+Traffic generated with special http status codes. By extracting the status code field and making sure it is one of the special codes, viz. 204,301,302,404, it can be categorized as "Not viewed traffic".
+
 
 Monthly History:
 -----------------
@@ -159,6 +164,8 @@ The 4th column also has the day details. For example, [20/Sep/2016:00:09:10 -070
 
 Days of week:
 --------------
+The 4th column in access.log gives the date, month and year when the request was received. By using date -d "<date displayed in 4th column> "+%a", we can obtain the day of the week this particular date fell on. By parsing the log entries corresponding to each day of the week and applying the above methods to calculate
+number of pages, number of hits and bandwidth, the days of the week usage metrics can be calculated. 
 
 Hours:
 -------

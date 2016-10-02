@@ -4,6 +4,7 @@
 <title>Analytics</title>
 <link rel="stylesheet" type="text/css" href="css/analytics.css" />
 </head>
+
 <body>
 
 <?php 
@@ -137,8 +138,7 @@ function counts()
 		
 		file_put_contents("counts.txt",serialize($counts));
 		
-		$tracking_result="<script type=\"text/javascript\">var tracking=\"done\";</script>";
-		htmlentities($tracking_result);
+		print("<script type=\"text/javascript\">var tracking=\"done\";</script>");
 	}
 	else return;
 }
