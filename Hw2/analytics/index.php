@@ -138,7 +138,7 @@ function counts()
 		
 		file_put_contents("counts.txt",serialize($counts));
 		
-		print("<script type=\"text/javascript\">var tracking=\"done\";</script>");
+		print("tracking=\"done\";");
 	}
 	else return;
 }
