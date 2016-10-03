@@ -176,6 +176,17 @@ Countries:
 The IP addresses can be accessed by extracting the first field from access.log and using the geoiplookup command to find out the country to which it belongs. By using sort and uniq -c command, we can find out the total number of hits for each country and the total number of pages can be found by using the referer column information(in order to 
 exclude files that are not pages).
 
+Pages-URL (top 10)
+-------------------
+
+In the log file format "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-agent}i\"", the %Referer will contain details of the pages visited. For example, 
+::1 - - [30/Sep/2016:23:21:00 -0700] "GET /experiments/css/style.css HTTP/1.1" 200 8677 "http://localhost/experiments/index.html" the index.html is the page. If we collect the %referer column details and use uniq command and do the count of number of times 
+each page was accessed and sort it and list the top 10, it gives the top 10 pages list. The "viewed" pages can be found by the response code. If the response code was 200, then the page was successfully rendered.
+Entry page - A page is an entry page if it is the landing page and has not been referred from any other page. If the referrer column is "-" then it is an entry page.
+Exit page - This page can be found by looking for "-" in the referrer column and also keeping track of the page that was visited before. Whatever page was last visited before the row with referrer value as "-" is the last visited page. This is the exit page.
+Average size - The number of bytes returned when the page is accessed gives the average size.
+ 
+
 
 
 
