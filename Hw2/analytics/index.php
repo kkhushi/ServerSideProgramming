@@ -144,7 +144,7 @@ function counts()
 		
 		file_put_contents("counts.txt",serialize($counts));
 		
-		echo "tracking=\"done\"";
+		echo "tracking=\"done\";";
 	}
 	else return;
 }
