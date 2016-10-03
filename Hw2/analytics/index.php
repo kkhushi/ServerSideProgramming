@@ -7,12 +7,12 @@
 
 <body>
 
-<?php 
+<?php
 
 //Set this value to document_root/analytics/index.php
-define("URL_TO_TRACKER_SITE" , "http://localhost/analytics/index.php"); 
+define("URL_TO_TRACKER_SITE" , "/analytics/index.php"); 
 
-if(!isset($_REQUEST["activity"]) || !isset($_REQUEST["arg"]) || empty($_REQUEST["arg"]))
+if(!isset($_REQUEST["activity"]))
 {	
 	landing();
 }
@@ -138,59 +138,67 @@ function counts()
 		
 		file_put_contents("counts.txt",serialize($counts));
 		
-		print("tracking=\"done\";");
+		echo "document.write(\"tracking=\"done\"\")";
 	}
 	else return;
 }
 
 function analytics()
 {
-	
-	print("<h1>View Analytics - Web Page Tagging Analytics</h1>");
-	print("<h2>Analytics for ". $_REQUEST["arg"]."</h2>");
-	$lookups=[];
-	$counts=[];
-	if (file_exists("url_lookups.txt") && file_exists("counts.txt"))
+	if(isset($_REQUEST["arg"]) && !empty($_REQUEST["arg"]))
 	{
-		$lookups=unserialize(file_get_contents("url_lookups.txt"));
-		$counts=unserialize(file_get_contents("counts.txt"));
-	}
 	
-	$arrayindex=sha1($_REQUEST["arg"]);
-	if(!array_key_exists($arrayindex,$counts))
-	{
-		print("<h3 class=\"noanalytics_message\">No analytics information for ".$_REQUEST["arg"]." found!</h3>");
-		return;
+		print("<h1>View Analytics - Web Page Tagging Analytics</h1>");
+		print("<h2>Analytics for ". $_REQUEST["arg"]."</h2>");
+		$lookups=[];
+		$counts=[];
+		if (file_exists("url_lookups.txt") && file_exists("counts.txt"))
+		{
+			$lookups=unserialize(file_get_contents("url_lookups.txt"));
+			$counts=unserialize(file_get_contents("counts.txt"));
+		}
+	
+		$arrayindex=sha1($_REQUEST["arg"]);
+		if(!array_key_exists($arrayindex,$counts))
+		{
+			print("<h3 class=\"noanalytics_message\">No analytics information for ".$_REQUEST["arg"]." found!</h3>");
+			return;
+		}
+		else
+		{
+			$XXXX=$counts[$arrayindex];
+			foreach($XXXX as $YYYY=>$ipcountinfo)
+			{
+				$corresponding_url=$lookups[$YYYY];
+				$sum=0;
+				foreach($ipcountinfo as $countip=>$countinfo)
+				{
+					$sum+=$countinfo;
+				}
+				print("<div class=\"forminput_info\"><h3>".$corresponding_url."  ".$sum."</h3>");
+		
+				print("<table>");
+				print("<tr><th>IP</th><th>Number of visits</th></tr>");
+				foreach($ipcountinfo as $key=>$value)
+				{
+					print("<tr>");
+					print("<td>".$key."</td>");
+					print("<td>".$value."</td>");
+					print("</tr>");
+				}
+				print("</table></div>");
+		
+			}
+		}
 	}
 	else
 	{
-		$XXXX=$counts[$arrayindex];
-		foreach($XXXX as $YYYY=>$ipcountinfo)
-		{
-			$corresponding_url=$lookups[$YYYY];
-			$sum=0;
-			foreach($ipcountinfo as $countip=>$countinfo)
-			{
-				$sum+=$countinfo;
-			}
-			print("<div class=\"forminput_info\"><h3>".$corresponding_url."  ".$sum."</h3>");
-		
-			print("<table>");
-			print("<tr><th>IP</th><th>Number of visits</th></tr>");
-			foreach($ipcountinfo as $key=>$value)
-			{
-				print("<tr>");
-				print("<td>".$key."</td>");
-				print("<td>".$value."</td>");
-				print("</tr>");
-			}
-			print("</table></div>");
-		
-		}
+		landing();
+		return;
 	}
 	
 }
-?>
 
+?>
 </body>
 </html>
