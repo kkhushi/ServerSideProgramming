@@ -1,3 +1,12 @@
+<?php
+if(isset($_REQUEST["activity"]) && $_REQUEST["activity"]=="counts")
+{
+	counts();
+	exit;
+
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,9 +31,6 @@ else
 	switch($_REQUEST["activity"]) {
 		case "codes":
 			codes();
-			break;
-		case "counts":
-			counts();
 			break;
 		case "analytics":
 			analytics();
@@ -138,7 +144,7 @@ function counts()
 		
 		file_put_contents("counts.txt",serialize($counts));
 		
-		echo "document.write(\"tracking=\"done\"\")";
+		echo "tracking=\"done\"";
 	}
 	else return;
 }
