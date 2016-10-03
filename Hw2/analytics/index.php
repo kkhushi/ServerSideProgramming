@@ -9,7 +9,7 @@
 
 <?php
 
-//Set this value to document_root/analytics/index.php
+//Set this value to document_root/ or <hosting-server>/<path-to-index.php>
 define("URL_TO_TRACKER_SITE" , "/analytics/index.php"); 
 
 if(!isset($_REQUEST["activity"]))
@@ -107,7 +107,7 @@ function codes()
 <?php
 	if(!$empty_form && empty($errortext))
 	{	
-		$codesnippet="<script src=\"".URL_TO_TRACKER_SITE."/?activity=counts&arg=$YYYY&arg2=$XXXX\"></script>";
+		$codesnippet="<script type=\"text/javascript\" src=\"".URL_TO_TRACKER_SITE."/?activity=counts&arg=$YYYY&arg2=$XXXX\"></script>";
 		print("<h2>Add the following code to the web page of the site with the url just entered</h2>");
 		print("<span>".htmlentities($codesnippet)."</span>");
 	}
