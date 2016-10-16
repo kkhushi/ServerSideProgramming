@@ -1,0 +1,36 @@
+I am not sure if this is in BCNF. I have made some assumptions. can discuss in class when you guys are free. It just helps me to preliminarily organize my thoughts.
+
+identifier->author,title
+title->story,ratings,views,submission date //TODO ask if titles are unique. Do different stories have exact same titles??
+title,genre->story
+
+genre
+---------
+politics
+entertainment
+comedy
+drama
+----------
+title,genre,story
+
+
+"cat love forever",drama,"different cat story"
+"cat love forever",entertainment,"different cat story"
+"election 2016","politics","election story"
+"trevor noah","comedy","daily show story"
+"beyonce's lemonade","entertainment","kanye story"
+"cat love is funny",comedy,"funny cat story"
+
+--------------------------------
+
+listing most rated, most viewed, newest based on phrases search (cat love,all)
+
+title,story,ratings,views,submission date
+
+cat love is funny,"cat story",3.5,45,10/15/2016
+cat love forever,"different cat story",2.4,34,9/12/2016
+
+
+
+identifier,author,title
+123,vasudha,cat love forever
