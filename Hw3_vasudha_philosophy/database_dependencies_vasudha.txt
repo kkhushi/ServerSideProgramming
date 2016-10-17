@@ -1,8 +1,8 @@
 I am not sure if this is in BCNF. I have made some assumptions. can discuss in class when you guys are free. It just helps me to preliminarily organize my thoughts.
 
 identifier->author,title
-title->story,ratings,views,submission date //TODO ask if titles are unique. Do different stories have exact same titles??
-title,genre->story
+identifier->story,ratings,views,submission date //TODO ask if titles are unique. Do different stories have exact same titles??
+identifier,genre->story
 
 genre
 ---------
