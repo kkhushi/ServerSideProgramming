@@ -1,0 +1,4 @@
+index.php?c=something&m=something, in this c is the controller to call and m is the method. Is "m" the method inside the controller to call?
+
+if we are determining the controller and method on the fly based on the GET arguments in index.php, then how are we going to use requre_once() if we don't know which controller file to import??
+In that case, isn't autoloader the only option??
