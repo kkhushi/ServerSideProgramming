@@ -1,6 +1,6 @@
-<?php
+<?php session_start();
 
-class controllers
+class controllerswrite
 {
 	public $models;
 	public $views;
@@ -11,9 +11,9 @@ class controllers
 	}
 	public function render()
 	{
-		if(!isset($_REQUEST['phrases']))
-		{
-			include 'views/landing_view.php';
-		}
+		
+		
+			include 'views/write_something.php';
+		
 	}
 }
