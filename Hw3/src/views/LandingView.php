@@ -4,28 +4,23 @@ namespace cool_name_for_your_group\hw3\views;
 session_start();
 define(BASE_URL,"http://localhost/Hw3");
 
-class Landingview
+class Landingview extends View
 {
-	public function __construct()
-	{
-		
-	}
-
-	public function render()
+	public function render($data)
 	{
 		print("<!DOCTYPE html>
 		<html>
 		<head><title>Five Thousand Characters</title></head>
 		<body>
 		<h1>Five Thousand Characters</h1>
-		<a href=".BASE_URL."/index.php?c=Controllerwrite&m=invokewriteview>Write Something!</a> <br />
+		<a href=".BASE_URL."/index.php?c=WriteController&m=invokewrite>Write Something!</a> <br />
 		<p> Check out what people are writing...</p>
 		<form method=\"post\" action=".BASE_URL."/index.php?c=controllerwithphrase&m=render>
 		<input type=\"text\" placeholder=\"Phrase Filter\" name=\"phrases\" /> <br />
 		<select name=\"genres\">
 		<option selected=\"selected\" value=\"all\">All Genres</option>
 		</select> <br />
-		<input type=\"submit\" value=\"Go\" />
+		<input type=\"submit\" value=\"Go\" name=\"gobutton\" />
 		</form>");
 
 
