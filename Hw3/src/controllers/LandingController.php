@@ -13,7 +13,9 @@ class LandingController extends Controller
 	public $model;
 	public function invoke()
 	{
+		
 		$this->data=$this->model->getGenre();
+		$this->model->closeConnection();
 		$this->callview();
 	}
 	public function callview()

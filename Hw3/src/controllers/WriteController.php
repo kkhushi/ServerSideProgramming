@@ -2,16 +2,14 @@
 namespace cool_name_for_your_group\hw3\controllers;
 
 use cool_name_for_your_group\hw3\views;
-
+use cool_name_for_your_group\hw3\models;
 
 class WriteController extends Controller
 {
-	public $model;
-	public $view;
 	public $data;
 	public $datafromwriteform;
 	
-	public function processsForm()
+	public function processForm()
 	{
 		if(isset($_REQUEST))
 		{
@@ -28,12 +26,13 @@ class WriteController extends Controller
 		}
 		
 		$this->model->saveNewStory($this->datafromwriteform);
-		
+		$this->model->closeConnection();
 	}
 	
 	public function invokewrite()
 	{
 		$this->data=$this->model->getGenre();
+		$this->model->closeConnection();
 		$view=new WriteSomethingView();
 		$view->render($this->data);		
 	}
