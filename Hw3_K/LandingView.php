@@ -15,21 +15,13 @@ class LandingView extends View
 	public $ratingdisplay;
 	public $viewingdisplay;
 	public $newestdisplay;
-	public $highestrateddata;
-	public $mostvieweddata;
-	public $newestdata;
-	const BASE_URL = "http://localhost/Hw3";
-
-
+	
 	public function __construct()
 	{
 		$this->singleselectgenre=new GenreSingleSelectHelper($this);
 		$this->ratingdisplay=new RatingDisplayHelper($this);
 		$this->viewingdisplay=new ViewingDisplayHelper($this);
 		$this->newestdisplay=new NewestDisplayHelper($this);
-		$this->highestrateddata=[];
-		$this->mostvieweddata=[];
-		$this->newestdata=[];
 	}
 
 	public function render($data)
@@ -41,15 +33,16 @@ class LandingView extends View
 		<h1>".$data['title']."</h1>
 		<a href=".Config::BASE_URL."/index.php?c=WriteController&m=invoke>Write Something!</a> <br />
 		<p> Check out what people are writing...</p>
-		<form method=\"post\" action=".Config::BASE_URL."/index.php?c=FilterController&m=invoke&arg1=LandingView>
+		<form method=\"post\" action=".Config::BASE_URL."/index.php?c=LandingController&m=invoke>
 		<input type=\"text\" placeholder=".$data['placeholder']." name=\"phrases\" /> <br />");
 		$this->singleselectgenre->render($data['genre']);
 		print("<input type=\"submit\" value=\"Go\" name=\"gobutton\" /></form>");
 
 
-		$this->ratingdisplay->render($this->highestrateddata);
-		$this->viewingdisplay->render($this->mostvieweddata);
-		$this->newestdisplay->render($this->newestdata);
+		$this->ratingdisplay->render($data['highestrateddata']);
+		$this->viewingdisplay->render($data['mostvieweddata']);
+		$data['newestdata']=[];
+		$this->newestdisplay->render($data['newestdata']);
 
 		print("</body></html>");
 
