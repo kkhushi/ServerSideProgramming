@@ -13,20 +13,27 @@ class WriteController extends Controller
 	{
 		if(isset($_REQUEST))
 		{
-			$this->datafromwriteform['genremultiselect']=[];
-			$this->datafromwriteform['titlename']=$_REQUEST['titlename'];
-			$this->datafromwriteform['authorname']=$_REQUEST['authorname'];
-			$this->datafromwriteform['identifiername']=$_REQUEST['identifiername'];
-			$this->datafromwriteform['story']=htmlspecialchars($_REQUEST['story']);
-			foreach($_REQUEST['genremultiselect'] as $selectedoption)
+			if(!empty($_REQUEST['identifiername']) && count(array_filter($_REQUEST))==1)
 			{
-				array_push($this->datafromwriteform['genremultiselect'],$selectedoption);
+				//retrieve saved story from database based on identifier and display
 			}
+			else
+			{		
+				$this->datafromwriteform['genremultiselect']=[];
+				$this->datafromwriteform['titlename']=$_REQUEST['titlename'];
+				$this->datafromwriteform['authorname']=$_REQUEST['authorname'];
+				$this->datafromwriteform['identifiername']=$_REQUEST['identifiername'];
+				$this->datafromwriteform['story']=htmlspecialchars($_REQUEST['story']);
+				foreach($_REQUEST['genremultiselect'] as $selectedoption)
+				{
+					array_push($this->datafromwriteform['genremultiselect'],$selectedoption);
+				}
 			
-		}
 		
-		$this->model->saveNewStory($this->datafromwriteform);
-		$this->model->closeConnection();
+				$this->model->saveNewStory($this->datafromwriteform);
+				$this->model->closeConnection();
+			}
+		}
 	}
 	
 	public function invokewrite()

@@ -7,8 +7,8 @@ class Helper
 {
 	public $view;
 	
-	public function __construct(View $view)
+	public function __construct(View $currentview)
 	{
-		$this->view=$view;
+		$this->view=$currentview;
 	}
 }
