@@ -3,7 +3,6 @@
 
 require_once('GenreMultiSelectHelper.php');
 require_once('Config.php');
-//define(BASE_URL,"http://localhost/Hw3");
 class WriteSomethingView extends View
 {
 	public $helper;
@@ -25,7 +24,7 @@ class WriteSomethingView extends View
     		</head>
     		<body>
 			<h1>
-			<a href="index.php?c=LandingController&m=invoke">Five Thousand Characters</a> - Write Something</h1>
+			<a href="<?=Config::BASE_URL?>/index.php?c=LandingController&m=invoke">Five Thousand Characters</a> - Write Something</h1>
 			<form method="post" action="index.php?c=WriteController&m=processForm">
 				<label for="titleid">Title</label>
 				<input type="text" name="titlename" id="titleid" /><br />
@@ -35,6 +34,7 @@ class WriteSomethingView extends View
 				<input type="text" name="identifiername" id="identifierid" /><br />
 				<label for="genreid">Genre</label>
 				<?php $this->helper->render($data['genre']); ?>
+				<br/>
 				<label for="textareaid">Your Writing</label>
 				<textarea rows="5" cols="5" id="textareaid" name="story"></textarea>
 				<input type="reset" value="Reset" name="resetbutton" />

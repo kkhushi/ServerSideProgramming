@@ -31,7 +31,6 @@ class WriteController extends Controller
 					array_push($this->datafromwriteform['genremultiselect'],$selectedoption);
 				}
 			
-		
 				$this->model->saveNewStory($this->datafromwriteform);
 				$this->model->closeConnection();
 			}
