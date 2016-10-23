@@ -15,6 +15,8 @@ else
 {
 	$controllertocall=$_REQUEST['c'];
 	$methodtoinvoke=$_REQUEST['m'];
+	/*$controller=new $controllertocall;
+	$controller->$methodtoinvoke;*/
     switch ($controllertocall) {
         case 'WriteController' :
             $controller=new WriteController();

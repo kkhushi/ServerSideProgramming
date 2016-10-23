@@ -40,7 +40,7 @@ class WriteController extends Controller
 	
 	public function invoke()
 	{
-		$this->data=$this->model->getGenre();
+		$this->model->getGenre($this);
 		$this->model->closeConnection();
 		$view=new WriteSomethingView();
 		$view->render($this->data);		

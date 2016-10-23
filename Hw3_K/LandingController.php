@@ -16,8 +16,8 @@ class LandingController extends Controller
 	public $model;
 	public function invoke()
 	{
-		
-		$this->data['genre']=$this->model->getGenre();
+		$this->data['genre']=[];
+		$this->model->getGenre($this);
 		$this->model->closeConnection();
 		$this->data['title']="Five Thousand Characters";
 		$this->data['placeholder']="Phrase Filter";

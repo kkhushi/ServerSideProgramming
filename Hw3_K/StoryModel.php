@@ -5,16 +5,14 @@ require_once('Model.php');
 
 class StoryModel extends Model
 {
-	public function getGenre()
+	public function getGenre(Controller $control)
 	{
-		$genrelist=[];
 		$query="select genrename from genre";
 		$result=$this->connection->query($query);
 		while($row=$result->fetch_assoc())
 		{
-			$genrelist[]=$row['genrename'];
+			$control->data['genre'][]=$row['genrename'];
 		}
-		return $genrelist;
 		
 	}
 

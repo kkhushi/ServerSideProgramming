@@ -2,6 +2,7 @@
 //namespace cool_name_for_your_group\hw3\views;
 
 require_once('GenreMultiSelectHelper.php');
+require_once('Config.php');
 //define(BASE_URL,"http://localhost/Hw3");
 class WriteSomethingView extends View
 {
@@ -33,7 +34,7 @@ class WriteSomethingView extends View
 				<label for="identifierid">Identifier</label>
 				<input type="text" name="identifiername" id="identifierid" /><br />
 				<label for="genreid">Genre</label>
-				<?php $this->helper->render($data); ?>
+				<?php $this->helper->render($data['genre']); ?>
 				<label for="textareaid">Your Writing</label>
 				<textarea rows="5" cols="5" id="textareaid" name="story"></textarea>
 				<input type="reset" value="Reset" name="resetbutton" />

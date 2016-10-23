@@ -8,7 +8,7 @@ class GenreMultiSelectHelper extends Helper
 	{ ?>
 		<select name="genremultiselect" multiple="multiple">
 		<option selected="selected" value="All">All</option>
-	<?php	foreach($data['genre'] as $genrevalue)
+	<?php	foreach($data as $genrevalue)
 		{ ?>
 			<option value=<?=$genrevalue?>><?=$genrevalue?></option>	
 	<?php	}?>

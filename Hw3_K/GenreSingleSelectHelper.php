@@ -7,7 +7,7 @@ class GenreSingleSelectHelper extends Helper
 	{ ?>
 		<select name="genresingleselect">
 		<option selected="selected" value="All">All Genres</option>
-	<?php	foreach($data['genre'] as $genrevalue)
+	<?php	foreach($data as $genrevalue)
 		{?>
 			<option value=<?=$genrevalue?>><?=$genrevalue?></option>	
 	<?php }?>
