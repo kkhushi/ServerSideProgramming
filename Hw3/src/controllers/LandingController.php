@@ -14,8 +14,10 @@ class LandingController extends Controller
 	public function invoke()
 	{
 		
-		$this->data=$this->model->getGenre();
+		$this->data['genre']=$this->model->getGenre();
 		$this->model->closeConnection();
+		$this->data['title']="Five Thousand Characters";
+		$this->data['placeholder']="Phrase Filter";
 		$this->callview();
 	}
 	public function callview()

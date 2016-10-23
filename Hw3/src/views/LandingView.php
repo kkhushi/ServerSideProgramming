@@ -1,34 +1,32 @@
 <?php
 namespace cool_name_for_your_group\hw3\views;
 
-session_start();
 define(BASE_URL,"http://localhost/Hw3");
 
 class Landingview extends View
 {
+	public $singleselectgenre;
+
+	public function __construct()
+	{
+		$this->singleselectgenre=new GenreSingleSelectHelper($this);
+	}
 	public function render($data)
 	{
 		print("<!DOCTYPE html>
 		<html>
-		<head><title>Five Thousand Characters</title></head>
+		<head><title>$data['title']</title></head>
 		<body>
-		<h1>Five Thousand Characters</h1>
+		<h1>$data['title']</h1>
 		<a href=".BASE_URL."/index.php?c=WriteController&m=invokewrite>Write Something!</a> <br />
 		<p> Check out what people are writing...</p>
 		<form method=\"post\" action=".BASE_URL."/index.php?c=controllerwithphrase&m=render>
-		<input type=\"text\" placeholder=\"Phrase Filter\" name=\"phrases\" /> <br />
-		<select name=\"genres\">
-		<option selected=\"selected\" value=\"all\">All Genres</option>
-		</select> <br />
-		<input type=\"submit\" value=\"Go\" name=\"gobutton\" />
-		</form>");
+		<input type=\"text\" placeholder=$data['placeholder'] name=\"phrases\" /> <br />");
+		
+		$this->singleselectgenre->render($data['genre']);
+		print("<input type=\"submit\" value=\"Go\" name=\"gobutton\" /></form>");
 
 
-		if(isset($_REQUEST["phrases"]))
-		{
-			$_SESSION["phrases"]=$_REQUEST["phrases"];
-			$_SESSION["genres"]=$_REQUEST["genres"];
-		}
 		
 		print("<h3>Highest Rated</h3>
 		<ol>
