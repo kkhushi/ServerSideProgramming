@@ -17,6 +17,12 @@ class LandingController extends Controller
 	{
 		$this->data['genre']=[];
 		$this->model->getGenre($this);
+		if(isset($_REQUEST['gobutton']) && isset($_REQUEST['phrases']))
+		{
+			$_SESSION['phrases']=$_REQUEST['phrases'];
+			$_SESSION['genre']=$_REQUEST['genresingleselect'];
+		}
+
 		if(isset($_SESSION['phrases']) && isset($_SESSION['genre']))
 		{
 			$this->model->listStories($this,$_SESSION['phrases'],$_SESSION['genre']);
@@ -33,11 +39,6 @@ class LandingController extends Controller
 	}
 	public function callview()
 	{
-		if(isset($_REQUEST['gobutton']) && isset($_REQUEST['phrases']))
-		{
-			$_SESSION['phrases']=$_REQUEST['phrases'];
-			$_SESSION['genre']=$_REQUEST['genresingleselect'];
-		}
 		$views=new LandingView();
 		$views->render($this->data);
 	}
