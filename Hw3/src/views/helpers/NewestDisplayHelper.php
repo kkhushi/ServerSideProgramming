@@ -13,14 +13,19 @@ class NewestDisplayHelper extends Helper
         }
         else
         {
-            print("<ol>");
+            ?>
+            <ol>
+            <?php
             foreach($data as $identifier=>$title)
-            {
-                print("<li><a href=\"index.php?c=ReadStoryController&m=invoke&arg1=".$identifier."\">".$title."</a></li>");
+            { ?>
+                <li><a href="index.php?c=ReadStoryController&m=invoke&arg1=<?=$identifier?>"><?=$title?></a></li>
             
-            }
-            print("</ol>");
+        <?php  }
+            ?>
+            </ol>
+        <?php
         }
     }
 }
 ?>
+
