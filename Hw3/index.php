@@ -24,24 +24,23 @@ use cool_name_for_your_group\hw3\controllers\WriteController;
 //require_once('WriteController.php');
 if(!isset($_REQUEST['c']) && !isset($_REQUEST['m']))
 {
-	$controller=new LandingController();
-	$controller->invoke();
+    $controller=new LandingController();
+    $controller->invoke();
 }
 
 else
 {
-	$controllertocall=$_REQUEST['c'];
-	$methodtoinvoke=$_REQUEST['m'];
-	$controller=new $controllertocall();
-	$controller->$methodtoinvoke();
-	/*switch ($controllertocall) {
+    $controllertocall=$_REQUEST['c'];
+    switch ($controllertocall) {
         case 'WriteController' :
             $controller=new WriteController();
             break;
         default:
             $controller= new LandingController();
-    }*/
-	
+    }
+    $methodtoinvoke=$_REQUEST['m'];
+    $controller->$methodtoinvoke();
+    
 }
 ?>
 
