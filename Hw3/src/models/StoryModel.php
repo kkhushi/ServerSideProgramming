@@ -37,6 +37,7 @@ class StoryModel extends Model
 	{
 		$queryhighestrated="";
 		$querymostviewed="";
+		$querynewest="";
 		//highest rated
 		/*select story.identifier,story.title,story.ratings from story,storygenre where story.identifier=storygenre.identifier and storygenre.gid=2 and story.title like '%star trek%' order by story.ratings DESC LIMIT 10*/
 		if($genrevalue!="All")
@@ -45,15 +46,18 @@ class StoryModel extends Model
 			$result=$this->connection->query($genreidquery);
 			$gid=$result->fetch_assoc();
 			$gidval=$gid['gid'];
-			$queryhighestrated="select story.identifier as identifierid,story.title as storytitle from story,storygenre where story.identifier=storygenre.identifier and storygenre.gid=".intval($gidval)." and story.title like '%".$phrasesvalue."%' order by (story.sum_of_ratings_so_far/story.number_of_ratings_so_far) as averagerating desc limit 10";
+			$queryhighestrated=" 
+				select story.identifier as identifierid, story.title as storytitle,story.sum_of_ratings_so_far/story.number_of_ratings_so_far) as averagerating from story,storygenre where story.identifier=storygenre.identifier and storygenre.gid=".intval($gidval)." and story.title like '%".$phrasesvalue."%' order by averagerating desc limit 10";
 			$querymostviewed="select story.identifier as identifierid,story.title as storytitle from story,storygenre where story.identifier=storygenre.identifier and storygenre.gid=".intval($gidval)." and story.title like '%".$phrasesvalue."%' order by story.number_of_ratings_so_far desc limit 10";
-			
+			$querynewest="select story.identifier as identifierid,story.title as storytitle from story,storygenre where story.identifier=storygenre.identifier and storygenre.gid=".intval($gidval)." and story.title like '%".$phrasesvalue."%' order by story.submissiondate desc limit 10";
 			
 		}
 		else
 		{
-			$queryhighestrated="select identifier as identifierid,title as storytitle from story where title like '%".$phrasesvalue."%' order by (story.sum_of_ratings_so_far/story.number_of_ratings_so_far) as averagerating desc limit 10";
+			$queryhighestrated="select identifier as identifierid,title as storytitle, story.sum_of_ratings_so_far/story.number_of_ratings_so_far as averagerating  from story where title like '%".$phrasesvalue."%' order by averagerating desc limit 10";
 			$querymostviewed="select identifier as identifierid,title as storytitle from story where title like '%".$phrasesvalue."%' order by story.number_of_ratings_so_far desc limit 10";
+			$querynewest="select identifier as identifierid,title as storytitle from story where title like '%".$phrasesvalue."%' order by story.submissiondate desc limit 10";
+			
 		}
 		$result_highest_rated=$this->connection->query($queryhighestrated);
 		
@@ -65,10 +69,17 @@ class StoryModel extends Model
 		{
 			$control->data['highestrateddata'][$row['identifierid']]=$row['storytitle'];
 		} }
+
 		$result_most_viewed=$this->connection->query($querymostviewed);
 		if ($result_most_viewed) { while($row=$result_most_viewed->fetch_assoc())
 		{
 			$control->data['mostvieweddata'][$row['identifierid']]=$row['storytitle'];
+		} }
+
+		$result_newest=$this->connection->query($querynewest);
+		if ($result_newest) { while($row=$result_newest->fetch_assoc())
+		{
+			$control->data['newestdata'][$row['identifierid']]=$row['storytitle'];
 		} }
 	}
 }

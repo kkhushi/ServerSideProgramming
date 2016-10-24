@@ -16,7 +16,7 @@ class NewestDisplayHelper extends Helper
             print("<ol>");
             foreach($data as $identifier=>$title)
             {
-                print("<li><a href=".Config::BASE_URL."/index.php?c=ReadStoryController&m=invoke&arg1=".$identifier.">".$title."</a></li>");
+                print("<li><a href=\"index.php?c=ReadStoryController&m=invoke&arg1=".$identifier."\">".$title."</a></li>");
             
             }
             print("</ol>");
