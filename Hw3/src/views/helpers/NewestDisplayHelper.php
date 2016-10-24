@@ -6,10 +6,10 @@ class NewestDisplayHelper extends Helper
 {
 	public function render($data)
 	{
-		print("<h3>Newest</h3>");
+		?><h3>Newest</h3><?php
         if(empty($data))
         {
-            print("<p>No story found</p><br/>");
+            ?><p>No story found</p><br/><?php
         }
         else
         {

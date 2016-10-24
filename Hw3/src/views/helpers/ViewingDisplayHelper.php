@@ -8,20 +8,20 @@ class ViewingDisplayHelper extends Helper
 {
 	public function render($data)
 	{
-        print("<h3>Most Viewed</h3>");
+        ?><h3>Most Viewed</h3><?php
         if(empty($data))
         {
-            print("<p>No story found</p><br/>");
+            ?><p>No story found</p><br/><?php
         }
         else
         {
-            print("<ol>");
+            ?><ol><?php
             foreach($data as $identifier=>$title)
             {
-                print("<li><a href=\"index.php?c=ReadStoryController&m=invoke&arg1=".$identifier."\">".$title."</a></li>");
+                ?><li><a href=\"index.php?c=ReadStoryController&m=invoke&arg1="<?=$identifier?>"><?=$title?></a></li><?php
             
             }
-            print("</ol>");
+            ?></ol><?php
         }
     }
 }
