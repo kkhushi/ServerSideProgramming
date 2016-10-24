@@ -56,20 +56,19 @@ class StoryModel extends Model
 			$querymostviewed="select identifier as identifierid,title as storytitle from story where title like '%".$phrasesvalue."%' order by story.views desc limit 10";
 		}
 		$result_highest_rated=$this->connection->query($queryhighestrated);
+		
+		$control->data['highestrateddata']=[];
+		$control->data['newestdata']=[];
+		$control->data['mostvieweddata']=[];
+
+		if ($result_highest_rated) {while($row=$result_highest_rated->fetch_assoc())
+		{
+			$control->data['highestrateddata'][$row['identifierid']]=$row['storytitle'];
+		} }
 		$result_most_viewed=$this->connection->query($querymostviewed);
-		if ($result_highest_rated) {
-			while($row=$result_highest_rated->fetch_assoc())
-			{
-				$control->data['highestrateddata'][$row['identifierid']]=$row['storytitle'];
-			}
-		}
-		if ($result_most_viewed) {
-			while($row=$result_most_viewed->fetch_assoc())
-			{
-				$control->data['mostvieweddata'][$row['identifierid']]=$row['storytitle'];
-			}
-		}
+		if ($result_most_viewed) { while($row=$result_most_viewed->fetch_assoc())
+		{
+			$control->data['mostvieweddata'][$row['identifierid']]=$row['storytitle'];
+		} }
 	}
-
-
 }

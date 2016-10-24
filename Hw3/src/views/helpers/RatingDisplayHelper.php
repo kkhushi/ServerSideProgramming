@@ -1,6 +1,8 @@
 <?php
 namespace cool_name_for_your_group\hw3\views\helpers;
 //require_once('Helper.php');
+use cool_name_for_your_group\hw3\views\helpers\Helper;
+use cool_name_for_your_group\hw3\configs\Config;
 
 class RatingDisplayHelper extends Helper
 {
@@ -16,8 +18,9 @@ class RatingDisplayHelper extends Helper
             print("<ol>");
             foreach($data as $identifier=>$title)
             {
-                print("<li><a href=".Config::BASE_URL."/index.php?c=ReadStoryController&m=invoke&arg1=".$identifier.">".$title."</a></li>");
-            
+            ?>
+            <li><a href="index.php?c=ReadStoryController&m=invoke&arg1=<?=$identifier?>"><?=$title?></a></li>
+            <?php
             }
             print("</ol>");
         }

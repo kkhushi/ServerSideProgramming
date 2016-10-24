@@ -24,6 +24,8 @@ class WriteSomethingView extends View
     		<head>
         		<title>Five Thousand Characters - Write Something</title>
         		<link rel="stylesheet" type="text/css" href="src/styles/common.css">
+        		<base href="http://localhost/Hw3/">
+
     		</head>
     		<body>
 			<h1>

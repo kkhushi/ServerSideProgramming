@@ -38,6 +38,7 @@ class LandingView extends View
 		<head>
 		<title><?=$data['title']?></title>
 		<link rel="stylesheet" type="text/css" href="src/styles/common.css">
+		<base href="http://localhost/Hw3/">
     	</head>
 		<body>
 		<h1><?=$data['title']?></h1>
@@ -53,7 +54,6 @@ class LandingView extends View
 	<?php
 		$this->ratingdisplay->render($data['highestrateddata']);
 		$this->viewingdisplay->render($data['mostvieweddata']);
-		$data['newestdata']=[];
 		$this->newestdisplay->render($data['newestdata']);
 
 		?>
