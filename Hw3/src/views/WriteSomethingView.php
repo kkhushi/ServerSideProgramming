@@ -42,8 +42,10 @@ class WriteSomethingView extends View
 				<br/>
 				<label for="textareaid">Your Writing</label>
 				<textarea rows="5" cols="5" id="textareaid" name="story"></textarea>
+				<div>
 				<input type="reset" value="Reset" name="resetbutton" />
-		    		<input type="submit" value="Save" name="savebutton"/>
+		    	<input type="submit" value="Save" name="savebutton"/>
+		    	</div>
 			</form>
     		</body>
 		</html>
