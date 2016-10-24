@@ -32,14 +32,16 @@ else
 {
 	$controllertocall=$_REQUEST['c'];
 	$methodtoinvoke=$_REQUEST['m'];
-	switch ($controllertocall) {
+	$controller=new $controllertocall();
+	$controller->$methodtoinvoke();
+	/*switch ($controllertocall) {
         case 'WriteController' :
             $controller=new WriteController();
             break;
         default:
             $controller= new LandingController();
-    }
-	$controller->invoke();
+    }*/
+	
 }
 ?>
 
