@@ -35,4 +35,40 @@ class StoryModel extends Model
 		
 	}
 
+	public function listStories(Controller $control,$phrasesvalue,$genrevalue)
+	{
+		$queryhighestrated="";
+		$querymostviewed="";
+		//highest rated
+		/*select story.identifier,story.title,story.ratings from story,storygenre where story.identifier=storygenre.identifier and storygenre.gid=2 and story.title like '%star trek%' order by story.ratings DESC LIMIT 10*/
+		if($genrevalue!="All")
+		{
+			$genreidquery="select gid from genre where genrename='".$genrevalue."'";
+			$result=$this->connection->query($genreidquery);
+			$gid=$result->fetch_assoc();
+			$gidval=$gid['gid'];
+			$queryhighestrated="select story.identifier as identifierid,story.title as storytitle from story,storygenre where story.identifier=storygenre.identifier and storygenre.gid=".intval($gidval)." and story.title like '%".$phrasesvalue."%' order by story.ratings desc limit 10";
+			$querymostviewed="select story.identifier as identifierid,story.title as storytitle from story,storygenre where story.identifier=storygenre.identifier and storygenre.gid=".intval($gidval)." and story.title like '%".$phrasesvalue."%' order by story.views desc limit 10";
+			
+			
+		}
+		else
+		{
+			$queryhighestrated="select identifier as identifierid,title as storytitle from story where title like '%".$phrasesvalue."%' order by story.ratings desc limit 10";
+			$querymostviewed="select identifier as identifierid,title as storytitle from story where title like '%".$phrasesvalue."%' order by story.views desc limit 10";
+		}
+
+		$result_highest_rated=$this->connection->query($queryhighestrated);
+		$result_most_viewed=$this->connection->query($querymostviewed);
+		while($row=$result_highest_rated->fetch_assoc())
+		{
+			$control->data['highestrateddata'][$row['identifierid']]=$row['storytitle'];
+		}
+		while($row=$result_most_viewed->fetch_assoc())
+		{
+			$control->data['mostvieweddata'][$row['identifierid']]=$row['storytitle'];
+		}
+
+	}
+
 }

@@ -12,4 +12,4 @@ class Helper
 	{
 		$this->view=$currentview;
 	}
-}
+}?>
