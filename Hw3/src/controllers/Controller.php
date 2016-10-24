@@ -1,4 +1,9 @@
 <?php
+namespace cool_name_for_your_group\hw3\controllers;
+
+use cool_name_for_your_group\hw3\models\StoryModel;
+
+//require_once('StoryModel.php');
 class Controller
 {
 	public $model;

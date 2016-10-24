@@ -1,15 +1,18 @@
 <?php
 namespace cool_name_for_your_group\hw3\views;
 
-
-define(BASE_URL,"http://localhost/Hw3");
+use cool_name_for_your_group\hw3\configs\Config;
+use cool_name_for_your_group\hw3\views\helpers\GenreMultiSelectHelper;
+ 
+//require_once('GenreMultiSelectHelper.php');
+//require_once('Config.php');
 class WriteSomethingView extends View
 {
 	public $helper;
 	public $submitteddata;
 	public function __construct()
 	{
-		parent::construct();
+		parent::__construct();
 		$this->helper=new GenreMultiSelectHelper($this);
 		
 		
@@ -20,12 +23,12 @@ class WriteSomethingView extends View
 		<html>
     		<head>
         		<title>Five Thousand Characters - Write Something</title>
-        		<link rel="stylesheet" type="text/css" href="/styles/common.css">
+        		<link rel="stylesheet" type="text/css" href="src/styles/common.css">
     		</head>
     		<body>
 			<h1>
-			<a href=<?=BASE_URL?>/index.php?c=LandingController&m=invoke>Five Thousand Characters</a> - Write Something</h1>
-			<form method="post" action=<?=BASE_URL?>/index.php?c=WriteController&m=processForm>
+			<a href="index.php?c=LandingController&m=invoke">Five Thousand Characters</a> - Write Something</h1>
+			<form method="post" action="index.php?c=WriteController&m=processForm">
 				<label for="titleid">Title</label>
 				<input type="text" name="titlename" id="titleid" /><br />
 				<label for="authorid">Author</label>
@@ -33,7 +36,8 @@ class WriteSomethingView extends View
 				<label for="identifierid">Identifier</label>
 				<input type="text" name="identifiername" id="identifierid" /><br />
 				<label for="genreid">Genre</label>
-				<?php $this->helper->render($data); ?>
+				<?php $this->helper->render($data['genre']); ?>
+				<br/>
 				<label for="textareaid">Your Writing</label>
 				<textarea rows="5" cols="5" id="textareaid" name="story"></textarea>
 				<input type="reset" value="Reset" name="resetbutton" />
@@ -41,7 +45,7 @@ class WriteSomethingView extends View
 			</form>
     		</body>
 		</html>
-	<?php}
+	<?php }
 }?>
 
 

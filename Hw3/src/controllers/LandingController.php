@@ -1,20 +1,37 @@
-<?php
-namespace cool_name_for_your_group\hw3\controllers;
+<?php namespace cool_name_for_your_group\hw3\controllers;
 
 
-use cool_name_for_your_group\hw3\views;
+use cool_name_for_your_group\hw3\views\LandingView;
 use cool_name_for_your_group\hw3\models;
+use cool_name_for_your_group\hw3\controllers\Controller;
 
+//require_once("Controller.php");
+//require_once("LandingView.php");
+session_start();
 
 class LandingController extends Controller
 {
 	public $views;
 	public $data;
 	public $model;
+
 	public function invoke()
 	{
-		
-		$this->data['genre']=$this->model->getGenre();
+		$this->data['genre']=[];
+		$this->model->getGenre($this);
+		if(isset($_REQUEST['gobutton']) && isset($_REQUEST['phrases']))
+		{
+			$_SESSION['phrases']=$_REQUEST['phrases'];
+			$_SESSION['genre']=$_REQUEST['genresingleselect'];
+		}
+		if(isset($_SESSION['phrases']) && isset($_SESSION['genre']))
+		{
+			$this->model->listStories($this,$_SESSION['phrases'],$_SESSION['genre']);
+		}
+		else
+		{
+			$this->model->listStories($this,"","All");
+		}
 		$this->model->closeConnection();
 		$this->data['title']="Five Thousand Characters";
 		$this->data['placeholder']="Phrase Filter";
@@ -22,11 +39,13 @@ class LandingController extends Controller
 	}
 	public function callview()
 	{
-		if(!isset($_REQUEST['gobutton']) && !isset($_REQUEST['phrases']))
+		if(isset($_REQUEST['gobutton']) && isset($_REQUEST['phrases']))
 		{
-			$views=new Landingview();
-			$views->render($this->data);
+			$_SESSION['phrases']=$_REQUEST['phrases'];
+			$_SESSION['genre']=$_REQUEST['genresingleselect'];
 		}
+		$views=new LandingView();
+		$views->render($this->data);
 	}
 }
 ?>

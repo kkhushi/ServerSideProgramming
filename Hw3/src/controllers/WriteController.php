@@ -3,7 +3,10 @@ namespace cool_name_for_your_group\hw3\controllers;
 
 use cool_name_for_your_group\hw3\views;
 use cool_name_for_your_group\hw3\models;
+use cool_name_for_your_group\hw3\views\WriteSomethingView;
 
+//require_once('Controller.php');
+//require_once('WriteSomethingView.php');
 class WriteController extends Controller
 {
 	public $data;
@@ -29,16 +32,15 @@ class WriteController extends Controller
 					array_push($this->datafromwriteform['genremultiselect'],$selectedoption);
 				}
 			
-		
 				$this->model->saveNewStory($this->datafromwriteform);
 				$this->model->closeConnection();
 			}
 		}
 	}
 	
-	public function invokewrite()
+	public function invoke()
 	{
-		$this->data=$this->model->getGenre();
+		$this->model->getGenre($this);
 		$this->model->closeConnection();
 		$view=new WriteSomethingView();
 		$view->render($this->data);		
