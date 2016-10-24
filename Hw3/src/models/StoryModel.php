@@ -45,15 +45,15 @@ class StoryModel extends Model
 			$result=$this->connection->query($genreidquery);
 			$gid=$result->fetch_assoc();
 			$gidval=$gid['gid'];
-			$queryhighestrated="select story.identifier as identifierid,story.title as storytitle from story,storygenre where story.identifier=storygenre.identifier and storygenre.gid=".intval($gidval)." and story.title like '%".$phrasesvalue."%' order by story.ratings desc limit 10";
-			$querymostviewed="select story.identifier as identifierid,story.title as storytitle from story,storygenre where story.identifier=storygenre.identifier and storygenre.gid=".intval($gidval)." and story.title like '%".$phrasesvalue."%' order by story.views desc limit 10";
+			$queryhighestrated="select story.identifier as identifierid,story.title as storytitle from story,storygenre where story.identifier=storygenre.identifier and storygenre.gid=".intval($gidval)." and story.title like '%".$phrasesvalue."%' order by (story.sum_of_ratings_so_far/story.number_of_ratings_so_far) as averagerating desc limit 10";
+			$querymostviewed="select story.identifier as identifierid,story.title as storytitle from story,storygenre where story.identifier=storygenre.identifier and storygenre.gid=".intval($gidval)." and story.title like '%".$phrasesvalue."%' order by story.number_of_ratings_so_far desc limit 10";
 			
 			
 		}
 		else
 		{
-			$queryhighestrated="select identifier as identifierid,title as storytitle from story where title like '%".$phrasesvalue."%' order by story.ratings desc limit 10";
-			$querymostviewed="select identifier as identifierid,title as storytitle from story where title like '%".$phrasesvalue."%' order by story.views desc limit 10";
+			$queryhighestrated="select identifier as identifierid,title as storytitle from story where title like '%".$phrasesvalue."%' order by (story.sum_of_ratings_so_far/story.number_of_ratings_so_far) as averagerating desc limit 10";
+			$querymostviewed="select identifier as identifierid,title as storytitle from story where title like '%".$phrasesvalue."%' order by story.number_of_ratings_so_far desc limit 10";
 		}
 		$result_highest_rated=$this->connection->query($queryhighestrated);
 		
