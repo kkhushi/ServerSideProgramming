@@ -35,6 +35,27 @@ class StoryModel extends Model
 		}
 		return $success;
 	}
+	public function getStory(Controller $control,$storyid)
+	{
+		$query="select story.author as author,story.title as title,storycontent.content as content,(story.sum_of_ratings_so_far/story.number_of_ratings_so_far) as averagerating from story,storycontent where story.identifier=".intval($storyid)." and story.identifier=storycontent.identifier";
+		$result=$this->connection->query($query);
+		$row=$result->fetch_assoc();
+		$control->data['title']=$row['title'];
+		$control->data['content']=$row['content'];
+		$control->data['author']=$row['author'];
+		$control->data['storyid']=$storyid;
+		$control->data['averagerating']=$row['averagerating'];
+		$query="update story set views=views+".intval(1);
+		$result=$this->connection->query($query);
+	}
+
+	public function rateStory($storyid,$rating)
+	{
+		$query="update story set sum_of_ratings_so_far=sum_of_ratings_so_far+".intval($rating).",number_of_ratings_so_far=number_of_ratings_so_far+".intval(1);
+		$result=$this->connection->query($query);
+		$_SESSION['ratedstories'][$storyid]=$rating;
+		
+	}
 	public function listStories(Controller $control,$phrasesvalue,$genrevalue)
 	{
 		$queryhighestrated="";
@@ -56,7 +77,7 @@ class StoryModel extends Model
 		else
 		{
 			$queryhighestrated="select identifier as identifierid,title as storytitle, story.sum_of_ratings_so_far/story.number_of_ratings_so_far as averagerating  from story where title like '%".$phrasesvalue."%' order by averagerating desc limit 10";
-			$querymostviewed="select identifier as identifierid,title as storytitle from story where title like '%".$phrasesvalue."%' order by story.number_of_ratings_so_far desc limit 10";
+			$querymostviewed="select identifier as identifierid,title as storytitle from story where title like '%".$phrasesvalue."%' order by story.views desc limit 10";
 			$querynewest="select identifier as identifierid,title as storytitle from story where title like '%".$phrasesvalue."%' order by story.submissiondate desc limit 10";
 			
 		}

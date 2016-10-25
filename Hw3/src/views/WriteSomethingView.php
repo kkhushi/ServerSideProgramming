@@ -3,9 +3,8 @@ namespace cool_name_for_your_group\hw3\views;
 
 use cool_name_for_your_group\hw3\configs\Config;
 use cool_name_for_your_group\hw3\views\helpers\GenreMultiSelectHelper;
- 
-//require_once('GenreMultiSelectHelper.php');
-//require_once('Config.php');
+use cool_name_for_your_group\hw3\views\elements\HeaderElement;
+
 class WriteSomethingView extends View
 {
 	public $helper;
@@ -14,19 +13,13 @@ class WriteSomethingView extends View
 	{
 		parent::__construct();
 		$this->helper=new GenreMultiSelectHelper($this);
-		
-		
+		$this->headersdisplay=new HeaderElement($this);
+
 	}
 	public function render($data)
-	{?>
-		<!Doctype html>
-		<html>
-    		<head>
-        		<title>Five Thousand Characters - Write Something</title>
-        		<link rel="stylesheet" type="text/css" href="src/styles/common.css">
-        		<base href="http://localhost/Hw3/">
-
-    		</head>
+	{
+		$data['titledisplay']="Five Thousand Characters - Write Something";
+		$this->headersdisplay->render($data); ?>
     		<body>
 			<h1>
 			<a href="index.php?c=LandingController&m=invoke">Five Thousand Characters</a> - Write Something</h1>
@@ -50,7 +43,7 @@ class WriteSomethingView extends View
     		</body>
 		</html>
 	<?php }
-}?>
+} ?>
 
 
 <!--

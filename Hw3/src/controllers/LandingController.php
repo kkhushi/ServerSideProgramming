@@ -5,10 +5,6 @@ use cool_name_for_your_group\hw3\views\LandingView;
 use cool_name_for_your_group\hw3\models;
 use cool_name_for_your_group\hw3\controllers\Controller;
 
-//require_once("Controller.php");
-//require_once("LandingView.php");
-//session_start();
-
 class LandingController extends Controller
 {
 	public $views;
@@ -34,16 +30,12 @@ class LandingController extends Controller
 		}
 		$this->model->closeConnection();
 		$this->data['title']="Five Thousand Characters";
+		$this->data['titledisplay']=$this->data['title'];
 		$this->data['placeholder']="Phrase Filter";
 		$this->callview();
 	}
 	public function callview()
 	{
-		if(isset($_REQUEST['gobutton']) && isset($_REQUEST['phrases']))
-		{
-			$_SESSION['phrases']=$_REQUEST['phrases'];
-			$_SESSION['genre']=$_REQUEST['genresingleselect'];
-		}
 		$views=new LandingView();
 		$views->render($this->data);
 	}

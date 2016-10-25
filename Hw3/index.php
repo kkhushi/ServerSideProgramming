@@ -67,6 +67,14 @@ else
 				$controller->$methodtoinvoke($argumentlist);
 			}
 		}
+		else
+		{
+			print("Invalid method called. Page cannot be displayed");
+		}
+	}
+	else
+	{
+		print("Page not found! Invalid Controller called");
 	}
 	
 }

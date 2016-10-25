@@ -1,8 +1,8 @@
-<?php namespace cool_name_for_your_group\hw3\views\helpers;
+<?php namespace cool_name_for_your_group\hw3\views\elements;
 
 use cool_name_for_your_group\hw3\views\View;
 
-abstract class Helper
+abstract class Element
 {
 	public $view;
 	
