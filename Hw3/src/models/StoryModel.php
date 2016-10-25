@@ -20,7 +20,7 @@ class StoryModel extends Model
 	{
 		$success = false;
 		$date = \date('Y-m-d');
-		$query="insert into story(identifier,author,title,submissiondate,sum_of_ratings_so_far,number_of_ratings_so_far) values(".intval($data['identifiername']).",'".$data['authorname']."','".$data['titlename']."','".$date."',0,1)";
+		$query="insert into story(identifier,author,title,submissiondate,sum_of_ratings_so_far,number_of_ratings_so_far) values(".intval($data['identifiername']).",'".$data['authorname']."','".$data['titlename']."','".$date."',0,0)";
 		$success = $this->connection->query($query);
 		$query="insert into storycontent values(".intval($data['identifiername']).",'".$data['story']."')";
 		$success = $this->connection->query($query);
@@ -37,7 +37,7 @@ class StoryModel extends Model
 	}
 	public function getStory(Controller $control,$storyid)
 	{
-		$query="select story.author as author,story.title as title,storycontent.content as content,(story.sum_of_ratings_so_far/story.number_of_ratings_so_far) as averagerating from story,storycontent where story.identifier=".intval($storyid)." and story.identifier=storycontent.identifier";
+		$query="select story.author as author,story.title as title,storycontent.content as content,IF(story.number_of_ratings_so_far=0 and story.sum_of_ratings_so_far=0,0,story.sum_of_ratings_so_far/story.number_of_ratings_so_far) as averagerating from story,storycontent where story.identifier=".intval($storyid)." and story.identifier=storycontent.identifier";
 		$result=$this->connection->query($query);
 		$row=$result->fetch_assoc();
 		$control->data['title']=$row['title'];
