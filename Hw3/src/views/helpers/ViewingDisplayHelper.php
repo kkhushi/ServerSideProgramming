@@ -22,7 +22,7 @@ class ViewingDisplayHelper extends Helper
 	<?php
             foreach($data as $identifier=>$title)
             {
-                ?><li><a href=\"index.php?c=ReadStoryController&m=invoke&arg1="<?=$identifier?>"><?=$title?></a></li><?php
+                ?><li><a href="index.php?c=ReadStoryController&m=invoke&arg1=<?=$identifier?>"><?=$title?></a></li><?php
             
             }
             ?></ol>

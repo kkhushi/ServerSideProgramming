@@ -1,5 +1,5 @@
 <?php namespace cool_name_for_your_group\hw3\views\helpers;
-//require_once('Helper.php');
+
 class GenreSingleSelectHelper extends Helper
 {
 	public function render($data)
