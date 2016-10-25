@@ -7,7 +7,7 @@ use cool_name_for_your_group\hw3\controllers\Controller;
 
 //require_once("Controller.php");
 //require_once("LandingView.php");
-session_start();
+//session_start();
 
 class LandingController extends Controller
 {

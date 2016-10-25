@@ -1,6 +1,8 @@
 <?php
 namespace cool_name_for_your_group\hw3;
+
 use cool_name_for_your_group\hw3\controllers as C;
+use cool_name_for_your_group\hw3\configs\Config;
 
 session_start();
 spl_autoload_register(function ($class) {
@@ -19,7 +21,6 @@ spl_autoload_register(function ($class) {
         require_once $file;
     }
 });
-
 if(!isset($_REQUEST['c']) && !isset($_REQUEST['m']))
 {
 	$controller=new C\LandingController();
@@ -52,7 +53,7 @@ else
 	if(in_array($controllertocall,$availablecontrollers))
 	{
 		//It is a valid controller
-		$controllerclass="C\\".$controllertocall;
+		$controllerclass=Config::_CONTROLLER_NAMESPACE_.$controllertocall;
 		$controller=new $controllerclass();
 		if(method_exists($controller,$methodtoinvoke))
 		{
