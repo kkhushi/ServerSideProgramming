@@ -1,7 +1,7 @@
 <?php
 namespace cool_name_for_your_group\hw3\models;
 
-//require_once('Model.php');
+
 use cool_name_for_your_group\hw3\controllers\Controller;
 
 class StoryModel extends Model
@@ -19,8 +19,9 @@ class StoryModel extends Model
 	public function saveNewStory($data)
 	{
 		$success = false;
-		$date = \date('Y-m-d');
-		$query="insert into story(identifier,author,title,submissiondate,sum_of_ratings_so_far,number_of_ratings_so_far) values(".intval($data['identifiername']).",'".$data['authorname']."','".$data['titlename']."','".$date."',0,0)";
+		\date_default_timezone_set('America/Los_Angeles');
+		$date = \date('Y-m-d H:i:s');
+		$query="insert into story(identifier,author,title,submissiondate,sum_of_ratings_so_far,number_of_ratings_so_far,views) values(".intval($data['identifiername']).",'".$data['authorname']."','".$data['titlename']."','".$date."',0,0,0)";
 		$success = $this->connection->query($query);
 		$query="insert into storycontent values(".intval($data['identifiername']).",'".$data['story']."')";
 		$success = $this->connection->query($query);

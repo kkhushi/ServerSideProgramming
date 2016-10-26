@@ -5,15 +5,20 @@ use cool_name_for_your_group\hw3\views\View;
 use cool_name_for_your_group\hw3\configs\Config;
 use cool_name_for_your_group\hw3\views\elements\HeaderElement;
 use cool_name_for_your_group\hw3\views\helpers\ReadStoryRatingHelper;
+use cool_name_for_your_group\hw3\views\helpers\InitialStoryRatingHelper;
+use cool_name_for_your_group\hw3\views\helpers\ContentDisplayHelper;
 
 class ReadStoryView extends View
 {
 	public $headersdisplay;
-	public $storyrating;
+	public $existingstoryrating;
+	public $newstoryrating;
+	public $contentdisplay;
 	
 	public function __construct()
 	{
 		$this->headersdisplay=new HeaderElement($this);
+		$this->contentdisplay=new ContentDisplayHelper($this);
 	}
 	public function render($data)
 	{
@@ -26,29 +31,20 @@ class ReadStoryView extends View
 		<div><?=$data['author']?></div>
 		Your Rating: <?php $this->displayRating($data) ?> <br />
 		Average Rating:<?=$data['averagerating'] ?><br/>
+		<?php $this->contentdisplay->render($data['content']);
 		
-		<p><?=$data['content']?></p>
-		
-		
-	
-	<?php 
 	}
 	public function displayRating($data)
 	{
-		$ratingdisplay="";
 		if(isset($data['showuserrating']))
 		{
-			$this->storyrating=new ReadStoryRatingHelper($this);
-			$this->storyrating->render($data['showuserrating']);
+			$this->existingstoryrating=new ReadStoryRatingHelper($this);
+			$this->existingstoryrating->render($data['showuserrating']);
 		}
 		else
-		{ ?>
-
-			<a href="index.php?c=ReadStoryController&m=invokeRateStory&arg1=<?=$data['storyid']?>&arg2=1">1</a>|
-			<a href="index.php?c=ReadStoryController&m=invokeRateStory&arg1=<?=$data['storyid']?>&arg2=2">2</a>|
-			<a href="index.php?c=ReadStoryController&m=invokeRateStory&arg1=<?=$data['storyid']?>&arg2=3">3</a>|
-			<a href="index.php?c=ReadStoryController&m=invokeRateStory&arg1=<?=$data['storyid']?>&arg2=4">4</a>|
-			<a href="index.php?c=ReadStoryController&m=invokeRateStory&arg1=<?=$data['storyid']?>&arg2=5">5</a>
-		<?php }
+		{
+			$this->newstoryrating=new InitialStoryRatingHelper($this);
+			$this->newstoryrating->render($data['storyid']);
+		}
 	}
 } ?>

@@ -1,21 +1,14 @@
 <?php namespace cool_name_for_your_group\hw3\views\helpers;
 use cool_name_for_your_group\hw3\views\helpers\Helper;
 
-class ReadStoryRatingHelper extends Helper
+class InitialStoryRatingHelper extends Helper
 {
 	public function render($data)
 	{
 		for($i=1;$i<=5;$i++)
-		{
-			if($i==$data)
-			{ ?>
-				<b><?= $i ?></b>
-				
-			<?php }
-			else
-			{ 
-				print($i." ");
-			}
-		}
+		{ ?>
+			|<a href="index.php?c=ReadStoryController&m=invokeRateStory&arg1=<?=$data?>&arg2=<?=$i?>"><?=$i?></a>
+		<?php }
 	}
 } ?>
+
