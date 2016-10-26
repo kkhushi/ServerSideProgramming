@@ -112,14 +112,14 @@ class StoryModel extends Model
 			$result=$this->connection->query($genreidquery);
 			$gid=$result->fetch_assoc();
 			$gidval=$gid['gid'];
-			$queryhighestrated="select s.identifier as identifierid, s.title as storytitle, s.sum_of_ratings_so_far / s.number_of_ratings_so_far as avgr from story s left join storygenre g on s.identifier=g.identifier where g.gid=".intval($gidval)." and s.title like '%".$phrasesvalue."%' order by avgr";
+			$queryhighestrated="select s.identifier as identifierid, s.title as storytitle, IF(s.number_of_ratings_so_far=0 and s.sum_of_ratings_so_far=0,0,s.sum_of_ratings_so_far/s.number_of_ratings_so_far) as avrgr from story s,storygenre g where s.identifier=g.identifier and g.gid=".intval($gidval)." and s.title like '%".$phrasesvalue."%' order by avrgr desc limit 10";
 			$querymostviewed="select story.identifier as identifierid,story.title as storytitle from story,storygenre where story.identifier=storygenre.identifier and storygenre.gid=".intval($gidval)." and story.title like '%".$phrasesvalue."%' order by story.number_of_ratings_so_far desc limit 10";
 			$querynewest="select story.identifier as identifierid,story.title as storytitle from story,storygenre where story.identifier=storygenre.identifier and storygenre.gid=".intval($gidval)." and story.title like '%".$phrasesvalue."%' order by story.submissiondate desc limit 10";
 			
 		}
 		else
 		{
-			$queryhighestrated="select identifier as identifierid,title as storytitle, story.sum_of_ratings_so_far/story.number_of_ratings_so_far as averagerating  from story where title like '%".$phrasesvalue."%' order by averagerating desc limit 10";
+			$queryhighestrated="select identifier as identifierid,title as storytitle, IF(story.number_of_ratings_so_far=0 and story.sum_of_ratings_so_far=0,0,story.sum_of_ratings_so_far/story.number_of_ratings_so_far) as averagerating  from story where title like '%".$phrasesvalue."%' order by averagerating desc limit 10";
 			$querymostviewed="select identifier as identifierid,title as storytitle from story where title like '%".$phrasesvalue."%' order by story.views desc limit 10";
 			$querynewest="select identifier as identifierid,title as storytitle from story where title like '%".$phrasesvalue."%' order by story.submissiondate desc limit 10";
 			
