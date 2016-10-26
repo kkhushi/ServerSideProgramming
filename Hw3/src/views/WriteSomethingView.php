@@ -25,16 +25,16 @@ class WriteSomethingView extends View
 			<a href="index.php?c=LandingController&m=invoke">Five Thousand Characters</a> - Write Something</h1>
 			<form method="post" action="index.php?c=WriteController&m=processForm">
 				<label for="titleid">Title</label>
-				<input type="text" name="titlename" id="titleid" /><br />
+				<input type="text" name="titlename" id="titleid" value="<?=$data['titlename']?>" /><br />
 				<label for="authorid">Author</label>
-				<input type="text" name="authorname" id="authorid" /><br />
+				<input type="text" name="authorname" id="authorid" value="<?=$data['authorname'] ?>" /><br />
 				<label for="identifierid">Identifier</label>
-				<input type="text" name="identifiername" id="identifierid" /><br />
+				<input type="text" name="identifiername" id="identifierid" value="<?=$data['identifiername']?>"/><br />
 				<label for="genreid">Genre</label>
 				<?php $this->helper->render($data['genre']); ?>
 				<br/>
 				<label for="textareaid">Your Writing</label>
-				<textarea rows="5" cols="5" id="textareaid" name="story"></textarea>
+				<textarea rows="5" cols="5" id="textareaid" name="story"><?=$data['story']?></textarea>
 				<div>
 				<input type="reset" value="Reset" name="resetbutton" />
 		    	<input type="submit" value="Save" name="savebutton"/>

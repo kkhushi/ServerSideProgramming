@@ -50,6 +50,40 @@ class StoryModel extends Model
 		$result=$this->connection->query($query);
 	}
 
+	public function findStory($storyid)
+	{
+		$query="select story.identifier from story where story.identifier=".intval($storyid);
+
+		$result=$this->connection->query($query);
+
+		if($result->num_rows > 0)
+		{
+			
+			return true;
+		}
+		else
+		{
+			return false;
+		}	
+	}
+
+	public function fetchexistingStory(Controller $control,$storyid)
+	{
+		$query="select story.author as author,story.title as title,storycontent.content as content from story,storycontent where story.identifier=".intval($storyid)." and story.identifier=storycontent.identifier";
+		$result=$this->connection->query($query);
+		$row=$result->fetch_assoc();
+		$control->data['titlename']=$row['title'];
+		$control->data['story']=$row['content'];
+		$control->data['authorname']=$row['author'];
+		$control->data['identifiername']=$storyid;
+	}
+
+	public function deleteStory($storyid)
+	{
+		$query="delete from story where story.identifier=".intval($storyid);
+		$result=$this->connection->query($query);
+	}
+
 	public function rateStory(Controller $control,$storyid,$rating)
 	{
 		$query="update story set sum_of_ratings_so_far=sum_of_ratings_so_far+".intval($rating).",number_of_ratings_so_far=number_of_ratings_so_far+".intval(1);
