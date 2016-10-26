@@ -31,7 +31,7 @@ class ReadStoryView extends View
 		<div><?=$data['author']?></div>
 		Your Rating: <?php $this->displayRating($data) ?> <br />
 		Average Rating:<?=$data['averagerating'] ?><br/>
-		<?php $this->contentdisplay->render($data['content']);
+		<?php $this->contentdisplay->render($data['paragraphchunks']);
 		
 	}
 	public function displayRating($data)

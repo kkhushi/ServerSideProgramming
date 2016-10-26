@@ -18,6 +18,8 @@ class ReadStoryController extends Controller
 		{
 			$this->data['showuserrating']=$_SESSION['ratedstories'][$storyid];
 		}
+		$formatteddata=\preg_replace("/\r\n/","\n",$this->data['content']);
+		$this->data['paragraphchunks']=\explode("\n\n",$formatteddata);
 		$this->view=new ReadStoryView();
 		$this->view->render($this->data);
 	}
@@ -35,6 +37,8 @@ class ReadStoryController extends Controller
 			$this->model->rateStory($this,$storyid,$rating);
 			$this->model->closeConnection();
 			$this->data['showuserrating']=$_SESSION['ratedstories'][$storyid];
+			$formatteddata=\preg_replace("/\r\n/","\n",$this->data['content']);
+			$this->data['paragraphchunks']=\explode("\n\n",$formatteddata);
 			$this->view=new ReadStoryView();
 			$this->view->render($this->data);
 		}

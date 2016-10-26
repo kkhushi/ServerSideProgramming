@@ -5,9 +5,7 @@ class ContentDisplayHelper extends Helper
 {
 	public function render($data)
 	{
-		$formatteddata=\preg_replace("/\r\n/","\n",$data);
-		$content=\explode("\n\n",$formatteddata);
-		foreach($content as $paragraphcontent)
+		foreach($data as $paragraphcontent)
 		{ ?>
 			<p><?=$paragraphcontent?></p>
 		<?php }
