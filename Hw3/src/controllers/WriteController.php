@@ -44,8 +44,7 @@ class WriteController extends Controller
 				$this->data['titlename']=filter_var($storydata['titlename'], FILTER_SANITIZE_SPECIAL_CHARS);
 				$this->data['authorname']=filter_var($storydata['authorname'], FILTER_SANITIZE_SPECIAL_CHARS);
 				$this->data['identifiername']=filter_var($storydata['identifiername'], FILTER_SANITIZE_NUMBER_INT);
-				data['story']=filter_var($storydata['story'], FILTER_SANITIZE_STRING);
-				$this->data['story']=filter_var($data['story'], FILTER_SANITIZE_SPECIAL_CHARS);
+				$this->data['story']=filter_var($storydata['story'], FILTER_SANITIZE_SPECIAL_CHARS);
 					
 				foreach($storydata['genremultiselect'] as $selectedoption)
 					{
