@@ -41,13 +41,15 @@ class WriteController extends Controller
 			}
 			else
 			{
-				$this->data['titlename']=$storydata['titlename'];
-				$this->data['authorname']=$storydata['authorname'];
-				$this->data['identifiername']=$storydata['identifiername'];
-				$this->data['story']=htmlspecialchars($storydata['story']);
+				$this->data['titlename']=filter_var($storydata['titlename'], FILTER_SANITIZE_SPECIAL_CHARS);
+				$this->data['authorname']=filter_var($storydata['authorname'], FILTER_SANITIZE_SPECIAL_CHARS);
+				$this->data['identifiername']=filter_var($storydata['identifiername'], FILTER_SANITIZE_NUMBER_INT);
+				data['story']=filter_var($storydata['story'], FILTER_SANITIZE_STRING);
+				$this->data['story']=filter_var($data['story'], FILTER_SANITIZE_SPECIAL_CHARS);
 					
 				foreach($storydata['genremultiselect'] as $selectedoption)
 					{
+						$selectedoption = filter_var($selectedoption, FILTER_SANITIZE_SPECIAL_CHARS);
 						\array_push($this->data['genremultiselect'],$selectedoption);
 					}
 				
@@ -65,8 +67,5 @@ class WriteController extends Controller
 		{
 			$this->model->closeConnection();
 		}
-
-		
-		
 	}
 } ?>
