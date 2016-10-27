@@ -16,11 +16,14 @@ class Controller
 		$this->data['identifiername']="";
 		$this->data['genre']=[];
 		$this->data['genremultiselect']=[];
+		$this->data['selectedgenredisplay']['genre']=[];
+		$this->data['selectedgenredisplay']['userselected']=[];
 		$this->data['story']="";
 		$this->data['titlenameerr']="";
 		$this->data['authornameerr']="";
 		$this->data['identifiernameerr']="";
 		$this->data['storyerr']="";
+		$this->data['genremultiselecterr']="";
 
 		$this->model=new StoryModel();
 	}

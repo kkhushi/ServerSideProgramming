@@ -31,7 +31,8 @@ class WriteSomethingView extends View
 				<label for="titleid">Title</label>
 				<input type="text" name="titlename" id="titleid" value="<?=$data['titlename']?>" /><span class="errormsg"><?= $data['titlenameerr']?></span><br />
 				<label for="genreid">Genre</label>
-				<?php $this->helper->render($data['genre']); ?>
+				<?php $this->helper->render($data['selectedgenredisplay']); ?>
+				<span class="errormsg"><?= $data['genremultiselecterr']?></span><br />
 				<br/>
 				<label for="textareaid">Your Writing</label>
 				<textarea rows="5" cols="5" id="textareaid" name="story"><?=$data['story']?></textarea><span class="errormsg"><?= $data['storyerr']?></span>

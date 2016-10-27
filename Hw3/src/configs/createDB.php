@@ -4,7 +4,7 @@ namespace thrill_seekers\hw3\configs;
 use thrill_seekers\hw3\configs\Config;
 
 require_once('Config.php');
-$conn=new \mysqli(Config::DB_HOST,Config::DB_USER,Config::DB_PASSWORD);
+$conn=new \mysqli(Config::DB_HOST,Config::DB_USER,Config::DB_PASSWORD,"",Config::DB_PORT,Config::DB_SOCKET);
 $query="create database ".Config::DB_NAME;
 $conn->query($query);
 

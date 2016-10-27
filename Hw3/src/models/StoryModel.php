@@ -76,6 +76,13 @@ class StoryModel extends Model
 		$control->data['story']=$row['content'];
 		$control->data['authorname']=$row['author'];
 		$control->data['identifiername']=$storyid;
+		//get the genres the user selected
+		$query="select genre.genrename as genrename from genre,storygenre where genre.gid=storygenre.gid and storygenre.identifier='".$storyid."'";
+		$result=$this->connection->query($query);
+		while($row=$result->fetch_assoc())
+		{
+			$control->data['genremultiselect'][]=$row['genrename'];
+		}
 	}
 
 	public function deleteStory($storyid)

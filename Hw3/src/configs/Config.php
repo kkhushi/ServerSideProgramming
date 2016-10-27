@@ -15,8 +15,10 @@ class Config
 	const MAX_IDENTIFIER_LENGTH=15;
 	const MAX_AUTHOR_LENGTH=35;
 	const DB_HOST="localhost";
+	const DB_PORT=3306;
+	const DB_SOCKET="";
 	const DB_USER="root";
 	const DB_PASSWORD="";
-	const DB_NAME="hw3finalever";
+	const DB_NAME="hw3tosubmit1";
 	const TIME_ZONE_VALUE='America/Los_Angeles';
 } ?>
