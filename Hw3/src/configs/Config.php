@@ -17,6 +17,6 @@ class Config
 	const DB_HOST="localhost";
 	const DB_USER="root";
 	const DB_PASSWORD="";
-	const DB_NAME="thrillseeker_hw3_db";
+	const DB_NAME="hw3finalever";
 	const TIME_ZONE_VALUE='America/Los_Angeles';
 } ?>
