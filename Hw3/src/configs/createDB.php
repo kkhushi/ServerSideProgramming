@@ -5,8 +5,11 @@ use thrill_seekers\hw3\configs\Config;
 
 require_once('Config.php');
 $conn=new \mysqli(Config::DB_HOST,Config::DB_USER,Config::DB_PASSWORD);
-$query="create database ".Config::DB_NAME;
+$query="DROP DATABASE IF EXISTS ".Config::DB_NAME;
 $conn->query($query);
+$query="CREATE DATABASE ".Config::DB_NAME;
+$conn->query($query);
+print("Database created");
 
 if($conn->connect_error)
 {
@@ -30,5 +33,6 @@ else
 		print("insertsql file not found!");
 	}
 $conn->close();
+print ("Database populated");
 	
 }
