@@ -31,7 +31,6 @@ class StoryModel extends Model
 			$query="select gid from genre where genrename='".$genrename."'";
 			$result=$this->connection->query($query);
 			$gid=$result->fetch_assoc();
-			?><?=$gid['gid']?><?php
 			$query="insert into storygenre values('".$data['identifiername']."',".intval($gid['gid']).")";
 			$success =$this->connection->query($query);
 		}

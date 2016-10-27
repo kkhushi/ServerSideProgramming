@@ -67,7 +67,7 @@ class WriteController extends Controller
 							\array_push($this->data['genremultiselect'],$selectedoption);
 						}
 				
-					//Check if data adheres to character limits and it so save it in database. Else, throw error to user
+					//Check if data adheres to character limits and it so save it in database. Else, throw error to user. Also this is called within the GET scenario and not when back button is pressed. This is to prevent update to database on back button and asking for resubmit.
 					if($this->validateUserData())
 					{
 						if($this->model->findStory($storydata['identifiername']))
@@ -82,7 +82,7 @@ class WriteController extends Controller
 				unset($_SESSION['post-data']);
 			}
 			
-			////do database inserts only in the redirected view and not when back is pressed. This is to prevent dialog box from popping up asking if we want to resubmit. Just render the page with no data when back is pressed.
+			////do database inserts only in the redirected view and not when back is pressed. 
 			$this->invoke();
 		}		
 	}
