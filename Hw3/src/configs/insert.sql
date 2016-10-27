@@ -106,7 +106,6 @@ INSERT INTO storycontent VALUES ('xwwv', 'John Haywood Northmen 213 90 1234 1893
 INSERT INTO storycontent VALUES ('azey', ' Joshua Foer Atlas Obscura 89 123 124124 1923-05-10 08:46:32');
 INSERT INTO storycontent VALUES ('vvrm', 'Heather C. Leigh Junkie 76846 324 2412345 2014-12-05 08:47:33');
 INSERT INTO storycontent VALUES ('kvtv', 'Luvvie Ajayi I am Judging You 1234 46 23768 1995-02-20 09:48:30');
-
 INSERT INTO storygenre VALUES ('abc', 1);
 INSERT INTO storygenre VALUES ('def', 2);
 INSERT INTO storygenre VALUES ('ghi', 3);
