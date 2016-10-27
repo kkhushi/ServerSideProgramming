@@ -1,14 +1,14 @@
 <?php
-namespace cool_name_for_your_group\hw3\views;
+namespace thrill_seekers\hw3\views;
 
-use cool_name_for_your_group\hw3\views\helpers;
-use cool_name_for_your_group\hw3\views\View;
-use cool_name_for_your_group\hw3\configs\Config;
-use cool_name_for_your_group\hw3\views\helpers\GenreSingleSelectHelper;
-use cool_name_for_your_group\hw3\views\helpers\RatingDisplayHelper;
-use cool_name_for_your_group\hw3\views\helpers\ViewingDisplayHelper;
-use cool_name_for_your_group\hw3\views\helpers\NewestDisplayHelper;
-use cool_name_for_your_group\hw3\views\elements\HeaderElement;
+use thrill_seekers\hw3\views\helpers;
+use thrill_seekers\hw3\views\View;
+use thrill_seekers\hw3\configs\Config;
+use thrill_seekers\hw3\views\helpers\GenreSingleSelectHelper;
+use thrill_seekers\hw3\views\helpers\RatingDisplayHelper;
+use thrill_seekers\hw3\views\helpers\ViewingDisplayHelper;
+use thrill_seekers\hw3\views\helpers\NewestDisplayHelper;
+use thrill_seekers\hw3\views\elements\HeaderElement;
 
 class LandingView extends View
 {

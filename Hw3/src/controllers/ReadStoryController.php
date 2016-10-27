@@ -1,8 +1,8 @@
-<?php namespace cool_name_for_your_group\hw3\controllers;
+<?php namespace thrill_seekers\hw3\controllers;
 
-use cool_name_for_your_group\hw3\controllers\Controller;
-use cool_name_for_your_group\hw3\views\ReadStoryView;
-use cool_name_for_your_group\hw3\models;
+use thrill_seekers\hw3\controllers\Controller;
+use thrill_seekers\hw3\views\ReadStoryView;
+use thrill_seekers\hw3\models;
 
 class ReadStoryController extends Controller
 {

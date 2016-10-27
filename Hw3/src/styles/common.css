@@ -17,6 +17,12 @@ select {
 
 }
 
+span.errormsg
+{
+	color:red;
+	display:block;
+	margin-right:0px;
+}
 option{
         height: 34px;
 

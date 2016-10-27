@@ -1,5 +1,7 @@
 <?php
-namespace cool_name_for_your_group\hw3\models;
+namespace thrill_seekers\hw3\models;
+
+use thrill_seekers\hw3\configs\Config;
 
 class Model {
 public $model;
@@ -12,7 +14,7 @@ public function __construct()
 
 public function initiateConnection()
 {
-	$this->connection=new \mysqli("localhost","root","","hw3data");
+	$this->connection=new \mysqli(Config::DB_HOST,Config::DB_USER,Config::DB_PASSWORD,Config::DB_NAME);
 	if($this->connection->connect_error)
 	{
 		return false;

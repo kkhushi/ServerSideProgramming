@@ -1,6 +1,6 @@
-<?php namespace cool_name_for_your_group\hw3\views\elements;
+<?php namespace thrill_seekers\hw3\views\elements;
 
-use cool_name_for_your_group\hw3\views\View;
+use thrill_seekers\hw3\views\View;
 
 abstract class Element
 {

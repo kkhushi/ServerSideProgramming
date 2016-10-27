@@ -1,7 +1,7 @@
 <?php
-namespace cool_name_for_your_group\hw3\controllers;
+namespace thrill_seekers\hw3\controllers;
 
-use cool_name_for_your_group\hw3\models\StoryModel;
+use thrill_seekers\hw3\models\StoryModel;
 
 class Controller
 {
@@ -17,6 +17,10 @@ class Controller
 		$this->data['genre']=[];
 		$this->data['genremultiselect']=[];
 		$this->data['story']="";
+		$this->data['titlenameerr']="";
+		$this->data['authornameerr']="";
+		$this->data['identifiernameerr']="";
+		$this->data['storyerr']="";
 
 		$this->model=new StoryModel();
 	}

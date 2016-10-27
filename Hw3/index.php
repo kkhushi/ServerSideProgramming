@@ -1,13 +1,13 @@
 <?php
-namespace cool_name_for_your_group\hw3;
+namespace thrill_seekers\hw3;
 
-use cool_name_for_your_group\hw3\controllers as C;
-use cool_name_for_your_group\hw3\configs\Config;
+use thrill_seekers\hw3\controllers as C;
+use thrill_seekers\hw3\configs\Config;
 
 session_start();
 spl_autoload_register(function ($class) {
     // project-specific namespace prefix
-    $prefix = 'cool_name_for_your_group\\hw3';
+    $prefix = 'thrill_seekers\\hw3';
     $len = strlen($prefix);
     $relative_class = substr($class, $len);
     

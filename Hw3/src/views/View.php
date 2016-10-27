@@ -1,5 +1,5 @@
 <?php
-namespace cool_name_for_your_group\hw3\views;
+namespace thrill_seekers\hw3\views;
 
 abstract class View
 {

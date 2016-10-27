@@ -1,5 +1,6 @@
-<?php namespace cool_name_for_your_group\hw3\views\helpers;
-use cool_name_for_your_group\hw3\views\helpers\Helper;
+<?php namespace thrill_seekers\hw3\views\helpers;
+
+use thrill_seekers\hw3\views\helpers\Helper;
 
 class ReadStoryRatingHelper extends Helper
 {

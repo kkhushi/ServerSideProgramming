@@ -1,9 +1,9 @@
 <?php
-namespace cool_name_for_your_group\hw3\views;
+namespace thrill_seekers\hw3\views;
 
-use cool_name_for_your_group\hw3\configs\Config;
-use cool_name_for_your_group\hw3\views\helpers\GenreMultiSelectHelper;
-use cool_name_for_your_group\hw3\views\elements\HeaderElement;
+use thrill_seekers\hw3\configs\Config;
+use thrill_seekers\hw3\views\helpers\GenreMultiSelectHelper;
+use thrill_seekers\hw3\views\elements\HeaderElement;
 
 class WriteSomethingView extends View
 {
@@ -24,17 +24,17 @@ class WriteSomethingView extends View
 			<h1>
 			<a href="index.php?c=LandingController&m=invoke">Five Thousand Characters</a> - Write Something</h1>
 			<form method="post" action="index.php?c=WriteController&m=processForm">
-				<label for="titleid">Title</label>
-				<input type="text" name="titlename" id="titleid" value="<?=$data['titlename']?>" /><br />
-				<label for="authorid">Author</label>
-				<input type="text" name="authorname" id="authorid" value="<?=$data['authorname'] ?>" /><br />
 				<label for="identifierid">Identifier</label>
-				<input type="text" name="identifiername" id="identifierid" value="<?=$data['identifiername']?>"/><br />
+				<input type="text" name="identifiername" id="identifierid" value="<?=$data['identifiername']?>"/><span class="errormsg"><?= $data['identifiernameerr']?></span><br />
+				<label for="authorid">Author</label>
+				<input type="text" name="authorname" id="authorid" value="<?=$data['authorname'] ?>" /><span class="errormsg"><?= $data['authornameerr']?></span><br />
+				<label for="titleid">Title</label>
+				<input type="text" name="titlename" id="titleid" value="<?=$data['titlename']?>" /><span class="errormsg"><?= $data['titlenameerr']?></span><br />
 				<label for="genreid">Genre</label>
 				<?php $this->helper->render($data['genre']); ?>
 				<br/>
 				<label for="textareaid">Your Writing</label>
-				<textarea rows="5" cols="5" id="textareaid" name="story"><?=$data['story']?></textarea>
+				<textarea rows="5" cols="5" id="textareaid" name="story"><?=$data['story']?></textarea><span class="errormsg"><?= $data['storyerr']?></span>
 				<div>
 				<input type="reset" value="Reset" name="resetbutton" />
 		    	<input type="submit" value="Save" name="savebutton"/>

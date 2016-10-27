@@ -1,8 +1,9 @@
 <?php
-namespace cool_name_for_your_group\hw3\models;
+namespace thrill_seekers\hw3\models;
 
 
-use cool_name_for_your_group\hw3\controllers\Controller;
+use thrill_seekers\hw3\controllers\Controller;
+use thrill_seekers\hw3\configs\Config;
 
 class StoryModel extends Model
 {
@@ -19,11 +20,11 @@ class StoryModel extends Model
 	public function saveNewStory($data)
 	{
 		$success = false;
-		\date_default_timezone_set('America/Los_Angeles');
+		\date_default_timezone_set(Config::TIME_ZONE_VALUE);
 		$date = \date('Y-m-d H:i:s');
-		$query="insert into story(identifier,author,title,submissiondate,sum_of_ratings_so_far,number_of_ratings_so_far,views) values(".intval($data['identifiername']).",'".$data['authorname']."','".$data['titlename']."','".$date."',0,0,0)";
+		$query="insert into story(identifier,author,title,submissiondate) values('".$data['identifiername']."','".$data['authorname']."','".$data['titlename']."','".$date."')";
 		$success = $this->connection->query($query);
-		$query="insert into storycontent values(".intval($data['identifiername']).",'".$data['story']."')";
+		$query="insert into storycontent values('".$data['identifiername']."','".$data['story']."')";
 		$success = $this->connection->query($query);
 		foreach ($data['genremultiselect'] as $genrename)
 		{
@@ -31,14 +32,14 @@ class StoryModel extends Model
 			$result=$this->connection->query($query);
 			$gid=$result->fetch_assoc();
 			?><?=$gid['gid']?><?php
-			$query="insert into storygenre values(".intval($data['identifiername']).",".intval($gid['gid']).")";
+			$query="insert into storygenre values('".$data['identifiername']."',".intval($gid['gid']).")";
 			$success =$this->connection->query($query);
 		}
 		return $success;
 	}
 	public function getStory(Controller $control,$storyid)
 	{
-		$query="select story.author as author,story.title as title,storycontent.content as content,IF(story.number_of_ratings_so_far=0 and story.sum_of_ratings_so_far=0,0,story.sum_of_ratings_so_far/story.number_of_ratings_so_far) as averagerating from story,storycontent where story.identifier=".intval($storyid)." and story.identifier=storycontent.identifier";
+		$query="select story.author as author,story.title as title,storycontent.content as content,IF(story.number_of_ratings_so_far=0 and story.sum_of_ratings_so_far=0,0,story.sum_of_ratings_so_far/story.number_of_ratings_so_far) as averagerating from story,storycontent where story.identifier='".$storyid."' and story.identifier=storycontent.identifier";
 		$result=$this->connection->query($query);
 		$row=$result->fetch_assoc();
 		$control->data['title']=$row['title'];
@@ -52,7 +53,7 @@ class StoryModel extends Model
 
 	public function findStory($storyid)
 	{
-		$query="select story.identifier from story where story.identifier=".intval($storyid);
+		$query="select story.identifier from story where story.identifier='".$storyid."'";
 
 		$result=$this->connection->query($query);
 
@@ -69,7 +70,7 @@ class StoryModel extends Model
 
 	public function fetchexistingStory(Controller $control,$storyid)
 	{
-		$query="select story.author as author,story.title as title,storycontent.content as content from story,storycontent where story.identifier=".intval($storyid)." and story.identifier=storycontent.identifier";
+		$query="select story.author as author,story.title as title,storycontent.content as content from story,storycontent where story.identifier='".$storyid."' and story.identifier=storycontent.identifier";
 		$result=$this->connection->query($query);
 		$row=$result->fetch_assoc();
 		$control->data['titlename']=$row['title'];
@@ -80,7 +81,7 @@ class StoryModel extends Model
 
 	public function deleteStory($storyid)
 	{
-		$query="delete from story where story.identifier=".intval($storyid);
+		$query="delete from story where story.identifier='".$storyid."'";
 		$result=$this->connection->query($query);
 	}
 
@@ -89,7 +90,7 @@ class StoryModel extends Model
 		$query="update story set sum_of_ratings_so_far=sum_of_ratings_so_far+".intval($rating).",number_of_ratings_so_far=number_of_ratings_so_far+".intval(1);
 		$result=$this->connection->query($query);
 
-		$query="select story.author as author,story.title as title,storycontent.content as content,(story.sum_of_ratings_so_far/story.number_of_ratings_so_far) as averagerating from story,storycontent where story.identifier=".intval($storyid)." and story.identifier=storycontent.identifier";
+		$query="select story.author as author,story.title as title,storycontent.content as content,(story.sum_of_ratings_so_far/story.number_of_ratings_so_far) as averagerating from story,storycontent where story.identifier='".$storyid."' and story.identifier=storycontent.identifier";
 		$result=$this->connection->query($query);
 		$row=$result->fetch_assoc();
 		$control->data['title']=$row['title'];
@@ -113,7 +114,7 @@ class StoryModel extends Model
 			$gid=$result->fetch_assoc();
 			$gidval=$gid['gid'];
 			$queryhighestrated="select s.identifier as identifierid, s.title as storytitle, IF(s.number_of_ratings_so_far=0 and s.sum_of_ratings_so_far=0,0,s.sum_of_ratings_so_far/s.number_of_ratings_so_far) as avrgr from story s,storygenre g where s.identifier=g.identifier and g.gid=".intval($gidval)." and s.title like '%".$phrasesvalue."%' order by avrgr desc limit 10";
-			$querymostviewed="select story.identifier as identifierid,story.title as storytitle from story,storygenre where story.identifier=storygenre.identifier and storygenre.gid=".intval($gidval)." and story.title like '%".$phrasesvalue."%' order by story.number_of_ratings_so_far desc limit 10";
+			$querymostviewed="select story.identifier as identifierid,story.title as storytitle from story,storygenre where story.identifier=storygenre.identifier and storygenre.gid=".intval($gidval)." and story.title like '%".$phrasesvalue."%' order by story.views desc limit 10";
 			$querynewest="select story.identifier as identifierid,story.title as storytitle from story,storygenre where story.identifier=storygenre.identifier and storygenre.gid=".intval($gidval)." and story.title like '%".$phrasesvalue."%' order by story.submissiondate desc limit 10";
 			
 		}

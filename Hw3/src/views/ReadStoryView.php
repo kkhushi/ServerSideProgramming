@@ -1,12 +1,12 @@
 <?php
-namespace cool_name_for_your_group\hw3\views;
+namespace thrill_seekers\hw3\views;
 
-use cool_name_for_your_group\hw3\views\View;
-use cool_name_for_your_group\hw3\configs\Config;
-use cool_name_for_your_group\hw3\views\elements\HeaderElement;
-use cool_name_for_your_group\hw3\views\helpers\ReadStoryRatingHelper;
-use cool_name_for_your_group\hw3\views\helpers\InitialStoryRatingHelper;
-use cool_name_for_your_group\hw3\views\helpers\ContentDisplayHelper;
+use thrill_seekers\hw3\views\View;
+use thrill_seekers\hw3\configs\Config;
+use thrill_seekers\hw3\views\elements\HeaderElement;
+use thrill_seekers\hw3\views\helpers\ReadStoryRatingHelper;
+use thrill_seekers\hw3\views\helpers\InitialStoryRatingHelper;
+use thrill_seekers\hw3\views\helpers\ContentDisplayHelper;
 
 class ReadStoryView extends View
 {
