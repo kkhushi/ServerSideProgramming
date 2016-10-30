@@ -1,52 +1,33 @@
+body {
+    background-color:#EEF1FE;
+    text-align: center;
+    margin: 10%;
+    font-size: 150%;
+}
+
 h1 {
     color: navy;
     text-align: center
 }
 
-body {
-    background-color: lightblue;
-    text-align: center;
+h3,p,form{
+    text-align: center
+}
+
+.center { text-align: center; list-style-position:inside;}
+
+
+div{
     margin: auto;
-    font-size: 150%;
+    padding: 10px;
+   
 }
 
-
-
-select.multiitems
-{
-	
-	width:30%;
-	text-align: center;
-	height:45px;
-	font-size:16px;
-}
-
-select {
-    text-align: center;
-    height: 34px;
-
-}
-
-span.errormsg
-{
-	color:red;
-	display:block;
-	margin-right:0px;
-	position:relative;
-}
-
-
-h3 {
-    text-align: center
-}
-
-p {
-    text-align: center
-}
-
-form{
-    text-align: center
-}
+ol {
+       display: inline-block;
+       margin-left: auto;
+       margin-right: auto;
+    }
 
 textarea{
     width: 500px;
@@ -56,12 +37,16 @@ textarea{
 
 .center { text-align: center; list-style-position:inside;}
 
-label,input {
-    width:180px;
-    text-align:center;
-    padding-bottom:10px; 
-    margin-top: 20px;
-    margin-bottom: 20px;
+label {
+    text-align:right;
+    padding: 13px;
+    width: 300px;
+    border: none;
+    outline: none;
+    font-size:15pt;
+    font-family: 'Open Sans', sans-serif;
+    display:inline-block;
+    float:left;
 }
  
 label[ for=textareaid ], label[ for = genreid]
@@ -69,17 +54,78 @@ label[ for=textareaid ], label[ for = genreid]
     vertical-align: top;
 }
 
-
-div{
-    margin: auto;
-    padding: 10px;
-   
+input[type="text"]
+{
+    padding: 13px;
+    width: 500px;
+    background:#fff;
+    border: none;
+    outline: none;
+    font-size:15pt;
+    font-family: 'Open Sans', sans-serif;
 }
 
 
+input[type="submit"]
+{
+    background:darkblue;
+    color:#fff;
+    padding:10px 20px;
+    border:none;
+    outline:none;
+    margin-top:20px;
+    cursor:auto;
+    width:30%;
+    font-size:16px;
+    font-family: 'Open Sans', sans-serif;
+}
 
-ol {
-       display: inline-block;
-       margin-left: auto;
-       margin-right: auto;
-    }
+input[type="reset"]
+{
+    background:darkblue;
+    color:#fff;
+    padding:10px 20px;
+    border:none;
+    outline:none;
+    margin-top:20px;
+    cursor:auto;
+    width:30%;
+    float:left;
+    font-size:16px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover
+{
+    background:navy;
+}
+
+select.multiitems
+{
+    padding: 13px;
+    width: 500px;
+    background:#fff;
+    border: none;
+    outline: none;
+    font-size:15pt;
+    font-family: 'Open Sans', sans-serif;
+}
+
+select {
+    padding: 23px;
+    width: 500px;
+    margin:13px;
+    background:#fff;
+    border: none;
+    outline: none;
+    font-size:15pt;
+    font-family: 'Open Sans', sans-serif;
+}
+
+span.errormsg
+{
+    color:red;
+    display:block;
+    margin-right:0px;
+    position:relative;
+}
