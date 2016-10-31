@@ -24,14 +24,23 @@ class WriteController extends Controller
 	}
 	
 	public function validateUserData()
-	{
-		//TODO check if we should count newline \n too? 
+	{ 
 		$result=true;
-		if(strlen($this->data['identifiernameerr']=(strlen($this->data['identifiername']) > intval(Config::MAX_IDENTIFIER_LENGTH))?"Identifier length exceeds maximum limit":"")>0) $result=false;
+		$identifierempty=false;
+		if(strlen($this->data['identifiernameerr']=(empty($this->data['identifiername']))?"Identifier cannot be empty":"")>0)
+		{
+			$result=false;
+			$identifierempty=true;
+		}
+		if(!$identifierempty && strlen($this->data['identifiernameerr']=(strlen($this->data['identifiername']) > intval(Config::MAX_IDENTIFIER_LENGTH))?"Identifier length exceeds maximum limit":"")>0)
+		{
+			 $result=false;
+		}
 		if(strlen($this->data['authornameerr']=(strlen($this->data['authorname']) > intval(Config::MAX_AUTHOR_LENGTH))?"Author name length exceeds maximum limit":"")>0) $result=false;
 		if(strlen($this->data['titlenameerr']=(strlen($this->data['titlename']) > intval(Config::MAX_TITLE_LENGTH))?"Story title length exceeds maximum limit":"")>0) $result=false;
 		if(strlen($this->data['storyerr']=(strlen($this->data['story']) > intval(Config::MAX_STORY_LENGTH))?"Story length exceeds maximum limit":"")>0) $result=false;
 		if(strlen($this->data['genremultiselecterr']=(empty($this->data['genremultiselect']))?"Error. Select atleast one genre":"")>0) $result=false;
+		
 	
 		return $result;
 		
@@ -53,7 +62,14 @@ class WriteController extends Controller
 				$storydata=$_SESSION['post-data'];
 			
 				//if identifier already exists in database display it's contents for editing
-				if(!empty($storydata['identifiername']) && count(array_filter($storydata))==2)
+				//Make sure the identifier length is appropriate
+				$invalididentifier=false;
+				if(strlen($this->data['identifiernameerr']=(strlen($storydata['identifiername']) > intval(Config::MAX_IDENTIFIER_LENGTH))?"Identifier length exceeds maximum limit":"")>0)
+				{
+			 		$invalididentifier=true;
+				}
+				
+				if(!$invalididentifier && !empty($storydata['identifiername']) && count(array_filter($storydata))==2)
 				{
 					if($this->model->findStory($storydata['identifiername']))
 					{
