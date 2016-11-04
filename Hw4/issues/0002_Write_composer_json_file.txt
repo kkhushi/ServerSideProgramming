@@ -1,0 +1,3 @@
+Write composer json file
+Assigned to: Vasudha Venkatesh
+Description: Write the contents of composer.json file specifying authors,mentioning simpletest package dependency, listing the namespace to folder structure mapping using psr-4 for autoloading classes in the Hw4.
